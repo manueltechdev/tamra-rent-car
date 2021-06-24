@@ -1,0 +1,42 @@
+<h4 class="title-addons">VEHICLE INSURANCE</h4>
+<nb-list>
+  <nb-list-item *ngFor="let item of insurance$ | async" style="height: 1%;">
+    <nb-radio (valueChange)="change(item)">
+      <div class="title-insurence">
+        <img src="assets/icons/icon_alert.svg">
+        <h1 style="margin-left:1%">{{item.title}}</h1>
+      </div>
+      <div class="container-car-insurance">
+        <div class="container-car-insurance__description">
+          <p><span>Excess</span>{{ item.excess }}</p>
+          <p><span>Coverage</span>{{ item.coverage }}</p>
+          <small>*Does not cover reckless driving and negligence.</small>
+          <div *ngIf="item?.insurf">
+            <small *ngIf="item?.insurf">*Must 26 years or older to purchase.</small>
+          </div>
+          <div class="policy" *ngIf="item?.insurf">
+            <img src="assets/icons/icon_policy.svg" style="width: 30px;height: 33px;">
+            <p style="margin-left:1%"> See our Insurance policy <a href="">here</a></p>
+          </div>
+        </div>
+        <div class="container-car-insurance__actions">
+          <div class="container-car-insurance__actions__price">
+<!--            <h6 class="container-car-insurance__headline-styles first-h6"-->
+<!--                *ngIf="item?.insurf">{{ item?.insurf | currency:'KRW':'₩':'0.0-4' }}-->
+<!--              <small>KRW</small>-->
+<!--            </h6>-->
+<!--            <h6 class="container-car-insurance__headline-styles second-h6"-->
+<!--                *ngIf="item?.insurb">{{ item?.insurb | currency:'KRW':'₩':'0.0-4' }}-->
+<!--              <small>KRW</small>-->
+<!--            </h6>-->
+            <small style="text-align: left;
+            font: normal normal 300 17px/23px Poppins;
+            letter-spacing: 0px;
+            color: #000000;
+            opacity: 1;">Price per day</small>
+          </div>
+        </div>
+      </div>
+    </nb-radio>
+  </nb-list-item>
+</nb-list>

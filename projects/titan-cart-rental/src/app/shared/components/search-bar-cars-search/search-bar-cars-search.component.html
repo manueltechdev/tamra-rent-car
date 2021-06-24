@@ -1,0 +1,29 @@
+
+    <div [formGroup]="rangeForm"  class="search-bar-cars-search-container">
+      <nb-select class="input-background" shape="semi-round" formControlName="where" placeholder="Where" fullWidth>
+        <nb-option *ngFor="let where of filteredControlOptions$ | async" [value]="where">
+          {{where.islocation}}
+        </nb-option>
+      </nb-select>
+      <nb-select  fullWidth
+                  shape="semi-round" formControlName="formHour" placeholder="From Hour">
+        <nb-option [value]="option"
+                   *ngFor="let option of fromHours">
+          {{ option }}
+        </nb-option>
+      </nb-select>
+      <mat-form-field appearance="fill">
+        <mat-label>Dates selected</mat-label>
+        <mat-date-range-input  [min]="tomorrow" [rangePicker]="picker">
+          <input formControlName="rangeStart"  matStartDate placeholder="Start date">
+          <input formControlName="rangeEnd"  matEndDate placeholder="End date">
+        </mat-date-range-input>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-date-range-picker #picker></mat-date-range-picker>
+      </mat-form-field>
+      <nb-select fullWidth
+                 shape="semi-round" formControlName="untilHour" placeholder="Until hour">
+        <nb-option [value]="option"
+                   *ngFor="let option of untilHour">{{ option }}</nb-option>
+      </nb-select>
+    </div>

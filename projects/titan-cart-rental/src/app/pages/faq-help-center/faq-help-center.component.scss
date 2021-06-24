@@ -1,0 +1,44 @@
+.faq-container {
+  .faq-banner {
+    background-image: url("../../../assets/images/faq-banner.png");
+    background-repeat: no-repeat;
+    height: 60vh;
+    background-size: cover;
+    position: relative;
+  }
+
+  .faq-content {
+    height: 300px;
+  }
+}
+
+::ng-deep .header-container {
+  background: #ffffff;
+
+  .header-logo2,
+  .logo2 {
+    display: inline-block!important;
+  }
+
+  .header-logo1,
+  .logo1 {
+    display: none!important;
+  }
+
+  a {
+    color: #000000!important;
+  }
+
+  .learn-more,
+  .profile-more {
+    background-color: rgba(169, 169, 169, 0.2) !important;
+  }
+
+  .vertical-line {
+    background: #000000!important;
+  }
+}
+
+::ng-deep .nb-theme-template nb-layout-header.fixed ~ .layout-container {
+  padding-top: 80px;
+}

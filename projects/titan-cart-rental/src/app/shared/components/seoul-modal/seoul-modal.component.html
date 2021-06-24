@@ -1,0 +1,93 @@
+<nb-card class="seoul-modal">
+    <img (click)="closeDialog()" class="close-dialog" src="../../../../assets/icons/close-modal.png">
+    <nb-card-body class="seoul-card">
+        <p class="subtitle">RENT A CAR</p>
+        <h1 class="title">Seoul</h1>
+
+        <div class="form-container">
+            <nb-card>
+                <nb-card-body class="example-items-col">
+                    <form [formGroup]="seoulForm" (ngSubmit)="sendMessage()">
+                        <div class="seoul-form-row">
+                            <div class="seoul-form-field">
+                                <label class="form-label">Trip start: </label>
+                                <div>
+                                    <nb-form-field>
+                                        <input fullWidth
+                                               shape="semi-round"
+                                               formControlName="rangeStart"
+                                               nbInput placeholder="Start Date:"
+                                               [nbDatepicker]="seoulformpickerstart">
+                                        <mat-datepicker-toggle matSuffix [for]="seoulformpickerstart"></mat-datepicker-toggle>
+                                        <nb-datepicker #seoulformpickerstart></nb-datepicker>
+                                    </nb-form-field>
+                                    <nb-select  fullWidth
+                                                shape="semi-round" formControlName="fromHour" placeholder="Start Time:">
+                                        <nb-option [value]="option"
+                                                   *ngFor="let option of fromHours">
+                                            {{ option }}
+                                        </nb-option>
+                                    </nb-select>
+                                </div>
+                            </div>
+
+                            <div class="seoul-form-field">
+                                <label class="form-label">Trip end: </label>
+                                <div>
+                                    <nb-form-field>
+                                        <input fullWidth
+                                               shape="semi-round"
+                                               formControlName="rangeEnd"
+                                               nbInput placeholder="End Date:"
+                                               [nbDatepicker]="seoulformpickerend">
+                                        <mat-datepicker-toggle matSuffix [for]="seoulformpickerend"></mat-datepicker-toggle>
+                                        <nb-datepicker #seoulformpickerend></nb-datepicker>
+                                    </nb-form-field>
+                                    <nb-select  fullWidth
+                                                shape="semi-round" formControlName="tillHour" placeholder="End Time:">
+                                        <nb-option [value]="option"
+                                                   *ngFor="let option of fromHours">
+                                            {{ option }}
+                                        </nb-option>
+                                    </nb-select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="seoul-form-row">
+                            <div class="seoul-form-field">
+                                <label class="form-label">Phone (WhatsApp) <span> *</span></label>
+                                <input [formControl]="phone" type="text" nbInput fullWidth shape="round" placeholder="Phone" required>
+                            </div>
+
+                            <div class="seoul-form-field">
+                                <label class="form-label">Email address <span> *</span></label>
+                                <input [formControl]="email" type="text" nbInput fullWidth shape="round" placeholder="Email address" required>
+                            </div>
+                        </div>
+
+                        <div class="seoul-form-row">
+                            <div class="contact-us-form-field seoul-comments">
+                                <label class="form-label">Comments <span> *</span></label>
+                                <p>Please let us know the type of vehicle that you desire and the trip's occasion such as business, leisure, personal or long-term. Also tell us how many persons going to use the vehicle and number of bags bring with you.</p>
+                                <textarea [formControl]="comments" nbInput fullWidth shape="round" placeholder="Comments"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="contact-us-message">
+                            <p *ngIf="showError" class="error">Please check the required fields</p>
+                            <p *ngIf="showSuccess" class="success">The message has been sent</p>
+                        </div>
+
+                        <div class="send-message-button-container">
+                            <div>
+                                <button type="submit">Keep exploring <img alt="send message" src="../../../assets/icons/arrow-right.png"></button>
+                            </div>
+                        </div>
+                    </form>
+                </nb-card-body>
+            </nb-card>
+        </div>
+
+    </nb-card-body>
+</nb-card>

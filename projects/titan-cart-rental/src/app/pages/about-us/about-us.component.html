@@ -1,0 +1,255 @@
+<div class="about-us-container">
+    <div class="about-us-banner">
+        <div class="top-divisor">
+            <img alt="divisor" src="../../../assets/icons/divisor-vertical.png">
+        </div>
+        <div class="bottom-divisor">
+            <img alt="divisor" src="../../../assets/icons/divisor-vertical.png">
+        </div>
+        <div class="about-us-banner-text">
+            <h1>About Tamra</h1>
+            <p>Jeju Island’s Leading Car Rental Agency</p>
+        </div>
+    </div>
+
+    <div class="about-tamra-container">
+        <div class="korean-logo">
+            <img alt="logo" src="../../../assets/logos/logo-korean.png">
+        </div>
+        <div class="right-dots-container">
+            <img src="../../../assets/images/orange-dots.png" alt="dots">
+        </div>
+        <div>
+            <p class="about-tamra-text">
+                {{pageData.aboutTamra.firstParagraph}}
+            </p>
+            <br>
+            <p class="about-tamra-text">
+                {{pageData.aboutTamra.secondParagraph}}
+            </p>
+        </div>
+    </div>
+
+    <div class="awards-container">
+        <h3>AWARDS</h3>
+        <div class="award">
+            <div>
+                <img alt="award" src="../../../assets/icons/first-award.png">
+                <img class="divisor" alt="divisor" src="../../../assets/icons/divisor-white.png">
+            </div>
+            <div>
+                <p class="bold-text">2016년~2018년 제주시 베스트 친절 관광우수 업체상</p>
+                <p>Won the Best Jeju Tourism Excellence Operator<br> Award from 2016 – 2018</p>
+            </div>
+        </div>
+
+        <div class="award">
+            <div>
+                <img alt="award" src="../../../assets/icons/second-award.png">
+                <img class="divisor" alt="divisor" src="../../../assets/icons/divisor-white.png">
+            </div>
+            <div>
+                <p class="bold-text">2019년 대한민국 프리미엄 브랜드 대상</p>
+                <p>Won the Korean Premium Brand Award in 2019</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="awards-container-mobile">
+        <div class="award first-award">
+            <div>
+                <img alt="award" src="../../../assets/icons/first-award.png">
+            </div>
+            <div>
+                <p class="bold-text">2016년~2018년 제주시 베스트 친절 관광우수 업체상</p>
+                <p>Won the Best Jeju Tourism Excellence Operator<br> Award from 2016 – 2018</p>
+            </div>
+        </div>
+
+        <div class="award">
+            <div>
+                <img alt="award" src="../../../assets/icons/second-award.png">
+            </div>
+            <div>
+                <p class="bold-text">2019년 대한민국 프리미엄 브랜드 대상</p>
+                <p>Won the Korean Premium Brand Award in 2019</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-business-container">
+        <div class="main-business-image">
+            <img class="main-business" alt="main-business" src="../../../assets/images/main-business.png">
+            <img class="main-business-dots" src="../../../assets/images/orange-dots.png" alt="dots">
+        </div>
+
+        <div class="main-business-content">
+            <p class="main-business">MAIN BUSINESS</p>
+            <h1 class="main-business-title">{{pageData.mainBusiness.title}}</h1>
+            <h1 class="main-business-text">{{pageData.mainBusiness.text}}</h1>
+        </div>
+    </div>
+
+    <div class="main-business-container main-business-container-mobile">
+        <div class="main-business-content">
+            <p class="main-business">MAIN BUSINESS</p>
+            <h1 class="main-business-title">{{pageData.mainBusiness.title}}</h1>
+            <h1 class="main-business-text">{{pageData.mainBusiness.text}}</h1>
+        </div>
+
+        <div class="main-business-image">
+            <img class="main-business" alt="main-business" src="../../../assets/images/main-business-mobile.png">
+        </div>
+    </div>
+
+    <div class="timeline-container">
+        <div class="timeline-header">
+            <p>Tamra Rent A Car</p>
+            <h1>Milestones and Timeline</h1>
+        </div>
+
+        <div class="timeline-carousel-container">
+            <swiper class="swiper-container"
+                    [grabCursor]= "true"
+                    [loop]="false"
+                    [navigation]="true"
+                    [autoHeight]="true"
+                    [slidesPerView]= "1"
+                    [breakpoints]="{
+                        '600': {
+                          slidesPerView: 3
+                         }
+                    }">
+                <div class="swiper-wrapper timeline">
+                    <ng-template swiperSlide *ngFor="let slide of slideData">
+                        <div class="swiper-content">
+                            <div class="timestamp">
+                                <span class="date">{{slide.date}}</span>
+                            </div>
+                            <div class="status">
+                                <span>{{slide.content}}</span>
+                            </div>
+                        </div>
+                    </ng-template>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+                <!-- Add Arrows -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </swiper>
+        </div>
+    </div>
+
+    <div class="products-container">
+        <div class="products-content">
+            <h1 class="products-title">{{pageData.products.title}}</h1>
+            <p class="products-text">
+                <img alt="products" src="../../../assets/logos/products-icon1.png">
+                {{this.pageData.products.firstParagraph}}
+            </p>
+            <p class="products-text">
+                <img alt="products" src="../../../assets/logos/products-icon2.png">
+                {{this.pageData.products.secondParagraph}}
+            </p>
+            <p class="products-text">
+                <img alt="products" src="../../../assets/logos/products-icon3.png">
+                {{this.pageData.products.thirdParagraph}}
+            </p>
+        </div>
+
+        <div class="products-image">
+            <img class="products-dots" src="../../../assets/images/orange-dots.png" alt="dots">
+            <img class="products" alt="main-business" src="../../../assets/images/products.png">
+        </div>
+    </div>
+
+    <div class="products-container products-container-mobile">
+        <div class="products-content">
+            <h1 class="products-title">{{pageData.products.title}}</h1>
+            <div class="products-img-container">
+                <img alt="products" src="../../../assets/logos/products-icon1.png">
+                <img alt="products" src="../../../assets/logos/products-icon2.png">
+                <img alt="products" src="../../../assets/logos/products-icon3.png">
+            </div>
+            <p class="products-text">
+                {{this.pageData.products.firstParagraph}}
+            </p>
+            <p class="products-text">
+                {{this.pageData.products.secondParagraph}}
+            </p>
+            <p class="products-text">
+                {{this.pageData.products.thirdParagraph}}
+            </p>
+        </div>
+
+        <div class="products-image">
+            <img class="products" alt="main-business" src="../../../assets/images/products-mobile.png">
+        </div>
+    </div>
+
+    <div class="main-business-container insurance-container">
+        <div class="main-business-image">
+            <img class="main-business" alt="main-business" src="../../../assets/images/insurance.png">
+            <img class="main-business-dots" src="../../../assets/images/orange-dots.png" alt="dots">
+        </div>
+
+        <div class="main-business-content">
+            <h1 class="main-business-title">{{pageData.insurance.title}}</h1>
+            <h1 class="main-business-text">{{pageData.insurance.firstParagraph}}</h1>
+            <h1 class="main-business-text">{{pageData.insurance.secondParagraph}}</h1>
+        </div>
+    </div>
+
+    <div class="main-business-container main-business-container-mobile">
+        <div class="main-business-content">
+            <h1 class="main-business-title">{{pageData.insurance.title}}</h1>
+            <h1 class="main-business-text">{{pageData.insurance.firstParagraph}}</h1>
+            <h1 class="main-business-text">{{pageData.insurance.secondParagraph}}</h1>
+        </div>
+
+        <div class="main-business-image">
+            <img class="main-business" alt="main-business" src="../../../assets/images/main-business-mobile.png">
+        </div>
+    </div>
+
+    <div class="locations-container">
+        <div class="locations-header">
+            LOCATIONS
+        </div>
+        <div class="locations-content">
+            <div class="location with-border">
+                <div class="location-img">
+                    <img alt="location" src="../../../assets/images/JEJU-white.png">
+                </div>
+                <div class="location-info">
+                    <p class="bold-text">Jeju Island (Headquarters) 064-742-3300</p>
+                    <p>5, Gonghang-ro, Jeju-si, Jeju Special Self-Governing Province</p>
+                </div>
+            </div>
+            <div class="location-border"></div>
+
+            <div class="location with-border">
+                <div class="location-img">
+                    <img alt="location" src="../../../assets/images/GWANGJU-white.png">
+                </div>
+                <div class="location-info">
+                    <p class="bold-text">Gwangju (Branch) bookings@tamrarentacar.com</p>
+                    <p>4F, 202, Sangmu-daero, Gwangsan-gu, Gwangju</p>
+                </div>
+            </div>
+
+            <div class="location-border"></div>
+
+            <div class="location">
+                <div class="location-img">
+                    <img alt="location" src="../../../assets/images/SEOUL-white.png">
+                </div>
+                <div class="location-info">
+                    <p class="bold-text">Seoul (Branch) bookings@tamrarentacar.com</p>
+                    <p>74 Nusanbong seong-ro 53rd Street, Yangchon-eup, Gimpo-si, Gyeonggi-do</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

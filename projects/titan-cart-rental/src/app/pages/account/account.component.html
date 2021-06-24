@@ -1,0 +1,228 @@
+<div class="account-container">
+    <div class="account-banner">
+        <div class="top-divisor">
+            <img alt="divisor" src="../../../assets/icons/divisor-vertical.png">
+        </div>
+        <div class="bottom-divisor">
+            <img alt="divisor" src="../../../assets/icons/divisor-vertical.png">
+        </div>
+        <div class="account-banner-text">
+            <h1>My Account</h1>
+            <p>Dashboard</p>
+        </div>
+    </div>
+
+    <div class="account-content">
+        <div class="account-menu">
+            <div (click)="changeView('account')"><p [ngClass] = "{active : view === 'account'}">Account</p></div>
+            <div (click)="changeView('orders')"><p [ngClass] = "{active : view === 'orders'}">Orders</p></div>
+            <div (click)="changeView('vehicle')"><p [ngClass] = "{active : view === 'vehicle'}">Vehicle Check-in</p></div>
+        </div>
+
+        <div class="vertical-line"></div>
+
+        <div class="content-view">
+            <div class="default-view" *ngIf="view === 'default'">
+                <h1>Welcome Gabriel!</h1>
+                <p>Thanks for using Tamra</p>
+            </div>
+
+            <div class="active-view" *ngIf="view === 'account'">
+                <div class="right-dots-container">
+                    <img src="../../../assets/images/orange-dots.png" alt="dots">
+                </div>
+
+                <form class="account-settings-form" [formGroup]="accountSettingsForm">
+                    <div class="title">
+                        <p>ACCOUNT SETTINGS</p>
+                        <p>Contact Information</p>
+                    </div>
+                    <div class="signup-form-field">
+                        <label class="form-label">Email address <span> *</span></label>
+                        <input formControlName="email" type="email" nbInput placeholder="Email address">
+                    </div>
+                    <div class="signup-form-field">
+                        <label class="form-label">Current Password <span> *</span></label>
+                        <input formControlName="currentPassword" type="password" nbInput placeholder="Leave blank to leave unchanged">
+                    </div>
+
+                    <div class="new-password-block">
+                        <div class="signup-form-field">
+                            <label class="form-label">New Password <span> *</span></label>
+                            <input formControlName="newPassword" type="password" nbInput placeholder="Leave blank to leave unchanged">
+                        </div>
+                        <div class="signup-form-field">
+                            <label class="form-label">Confirm New Password <span> *</span></label>
+                            <input formControlName="confirmNewPassword" type="password" nbInput placeholder="Leave blank to leave unchanged">
+                        </div>
+                    </div>
+
+                    <div class="name-block">
+                        <div class="signup-form-field">
+                            <label class="form-label">First Name <span> *</span></label>
+                            <input formControlName="firstName" type="text" nbInput placeholder="First Name">
+                        </div>
+                        <div class="signup-form-field">
+                            <label class="form-label">Last Name <span> *</span></label>
+                            <input formControlName="lastName" type="text" nbInput placeholder="Last Name">
+                        </div>
+                    </div>
+
+                    <div class="signup-form-field">
+                        <label class="form-label">Username <span> *</span></label>
+                        <p class="username-text">This will be how your name will be displayed in the account section and in reviews</p>
+                        <input formControlName="username" type="text" nbInput placeholder="Username">
+                    </div>
+
+
+                    <div class="submit-button-container">
+                        <div>
+                            <button type="submit">Save changes <img alt="send message" src="../../../assets/icons/arrow-right.png"></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="orders-view" *ngIf="view === 'orders'">
+<!--                <h1>No trips yet</h1>-->
+<!--                <div class="submit-button-container">-->
+<!--                    <div>-->
+<!--                        <button type="submit">Book a car <img alt="send message" src="../../../assets/icons/arrow-right.png"></button>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+                <div class="desktop-view">
+                    <p class="grey-text">BOOKED</p>
+                    <div class="header-bar">
+                        <div>Order</div>
+                        <div>Date</div>
+                        <div>Status</div>
+                        <div>Total</div>
+                    </div>
+
+                    <div class="orders-view-content">
+                        <div class="order">#5465</div>
+                        <div class="date-container">
+                            <p class="created-date">Created date</p>
+                            <p class="date">28 September</p>
+                            <p class="year">2020</p>
+
+                            <div class="trip-duration">
+                                <div class="trip-start">
+                                    <p>Trip start</p>
+                                    <p>2 October, 2020</p>
+                                    <p>10:00 AM</p>
+                                </div>
+                                <div class="right-arrow"><img alt="arrow-right" src="../../../assets/icons/arrow-right.png"></div>
+                                <div class="trip-end">
+                                    <p>Trip end</p>
+                                    <p>5 October, 2020</p>
+                                    <p>11:00 AM</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="status">
+                            <div>Pending payment</div>
+                        </div>
+
+                        <div class="total">
+                            <p>$295.0 USD</p>
+                            <p>For 2 items</p>
+                        </div>
+
+                        <div class="buttons-container">
+                            <div><button>Pay</button></div>
+                            <div><button onclick="location.href = '/booked-trip'">View</button></div>
+                            <div><button>Cancel</button></div>
+                        </div>
+                    </div>
+
+                    <div class="right-dots-container">
+                        <img src="../../../assets/images/orange-dots.png" alt="dots">
+                    </div>
+                </div>
+
+                <div class="mobile-view">
+                    <p class="grey-text">BOOKED</p>
+
+                    <div class="order-container">
+                        <p>Order</p>
+                        <p>#5465</p>
+                    </div>
+
+                    <div class="date-container">
+                        <p class="title">Date</p>
+                        <p class="created-date">Created date</p>
+                        <p class="date">28 September</p>
+                        <p class="year">2020</p>
+
+                        <div class="trip-duration">
+                            <div class="trip-start">
+                                <p>Trip start</p>
+                                <p>2 October, 2020</p>
+                                <p>10:00 AM</p>
+                            </div>
+                            <div class="right-arrow"><img alt="arrow-right" src="../../../assets/icons/arrow-right.png"></div>
+                            <div class="trip-end">
+                                <p>Trip end</p>
+                                <p>5 October, 2020</p>
+                                <p>11:00 AM</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="status-container">
+                        <p class="title">Status</p>
+                        <p>Pending payment</p>
+                    </div>
+
+                    <div class="total-container">
+                        <p class="title">Total</p>
+                        <p>$295.0 USD</p>
+                        <p>For 2 items</p>
+
+                        <div class="buttons-container">
+                            <div><button>Pay</button></div>
+                            <div><button onclick="location.href = '/booked-trip'">View</button></div>
+                            <div><button>Cancel</button></div>
+                        </div>
+
+                        <div class="arrow-down">
+
+                        </div>
+                    </div>
+
+
+                    <div class="right-dots-container">
+                        <img src="../../../assets/images/orange-dots.png" alt="dots">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="active-view vehicle-view" *ngIf="view === 'vehicle'">
+                <div class="right-dots-container">
+                    <img src="../../../assets/images/orange-dots.png" alt="dots">
+                </div>
+
+                <form class="account-settings-form" [formGroup]="vehicleForm">
+                    <div class="title">
+                        <p>SELF CHECK-IN</p>
+                        <p>Registration</p>
+                    </div>
+                    <div class="signup-form-field">
+                        <label class="form-label">Your orden number <span> *</span></label>
+                        <input formControlName="orderNumber" type="text" nbInput placeholder="Your orden number">
+                    </div>
+
+                    <div class="submit-button-container">
+                        <div>
+                            <button type="submit">Save <img alt="send message" src="../../../assets/icons/arrow-right.png"></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

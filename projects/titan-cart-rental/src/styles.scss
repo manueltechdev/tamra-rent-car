@@ -1,0 +1,182 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$titan-cart-rental-primary: mat-palette($mat-indigo);
+$titan-cart-rental-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$titan-cart-rental-warn: mat-palette($mat-red);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$titan-cart-rental-theme: mat-light-theme((
+  color: (
+    primary: $titan-cart-rental-primary,
+    accent: $titan-cart-rental-accent,
+    warn: $titan-cart-rental-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($titan-cart-rental-theme);
+
+@import 'themes';
+
+@import '~@nebular/theme/styles/globals';
+@import '~swiper/swiper-bundle.css';
+
+@import 'https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@700&display=swap';
+@import 'https://fonts.googleapis.com/css?family=Poppins';
+
+.title-addons{
+  text-align: left !important;
+  font: normal normal 300 14px/23px Poppins !important;
+  letter-spacing: 1.12px !important;
+  color: #696969 !important;
+  opacity: 1 !important;
+}
+
+
+.button-add {
+    background-color: white !important;
+    border: 1px solid #E54300 !important;
+    border-radius: 71px !important;
+    opacity: 1 !important;
+    text-align: left !important;
+    font: normal normal bold 14px/21px Poppins !important;
+    letter-spacing: 0px !important;
+    color: #000000 !important;
+
+}
+
+.body-content {
+  display: flex; justify-content: space-between;
+  p {
+    flex: 35%;
+  }
+}
+
+@include nb-install() {
+  @include nb-theme-global();
+};
+
+.background-transparent {
+  background-color: transparent!important;
+}
+
+.nb-theme-template nb-layout-header.header nav {
+  padding: 0;
+}
+
+.nb-theme-template nb-layout .layout .layout-container .content .columns nb-layout-column {
+  padding: 0;
+}
+
+.nb-theme-template nb-layout-header.fixed ~ .layout-container {
+  padding-top: 0;
+}
+
+.nb-theme-template nb-select.appearance-outline.size-medium .select-button {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.mat-form-field-type-mat-date-range-input .mat-form-field-infix,
+.mat-form-field-prefix, .mat-form-field-suffix {
+  position: relative;
+  top: 8px;
+
+  mat-label {
+    color: #8f9bb3;
+  }
+
+  svg {
+    color: #E54300;
+  }
+}
+
+.nb-theme-template nb-select.appearance-outline.status-basic .select-button nb-icon {
+  color: #E54300;
+}
+
+.nb-theme-template [nbButton].appearance-filled.status-primary[disabled] {
+  opacity: 0.6;
+  color: #ffffff;
+}
+
+.nb-theme-template [nbButton].size-medium.icon-start.icon-end.appearance-filled {
+  position: relative;
+  bottom: 2px;
+  margin-left: 20px;
+}
+
+.nb-theme-template nb-layout .layout .layout-container .content nb-layout-footer nav {
+  background-color: #E6E6E6;
+  padding: 0;
+}
+
+.mat-calendar-body-selected {
+  background-color: #E54300;
+}
+
+.mat-calendar-body-in-range::before {
+  background: rgba(229, 67, 0, 0.2);
+}
+
+.d-flex {
+  display: flex;
+}
+
+.dialog-styles {
+  width: 100vw;
+  nb-dialog-container {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+  }
+
+}
+
+.space-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+ng::deep mat-form-field {
+  height: 40px !important;
+}
+ng::deep .select-button {
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  box-shadow: 2px 7px 10px #00000029;
+  border-radius: 71px;
+  opacity: 1;
+}
+.mat-form-field-appearance-fill .mat-form-field-flex {
+  background-color: transparent !important;
+  margin-top: -10px;
+}
+
+
+.mat-form-field-wrapper {
+  padding-bottom: 0 ;
+}
+.mat-form-field-underline {
+  display: none;
+
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

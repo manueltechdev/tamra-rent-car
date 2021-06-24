@@ -1,0 +1,19 @@
+<h4 class="title-addons">ADD ONS</h4>
+<nb-list>
+  <nb-list-item *ngFor="let addon of addons$ | async">
+    <div class="container-car-detail">
+      <div class="container-car-detail__image-text" nbTooltip="This is a tooltip" nbTooltipPlacement="bottom">
+        <img width="30" alt="addon thumbnail" [src]="addon.image">
+        <span style="margin-left:3%;">{{ addon.idescription }}</span>
+      </div>
+      <div class="container-car-detail__actions">
+        <button *ngIf="!addon?.added" (click)="updateEntity(addon)" nbButton size="small" status="info">
+          Add to cart
+        </button>
+        <button *ngIf="addon?.added" (click)="removeEntity(addon)" nbButton size="small" status="danger">
+          Remove to cart
+        </button>
+      </div>
+    </div>
+  </nb-list-item>
+</nb-list>

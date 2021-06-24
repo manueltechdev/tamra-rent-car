@@ -1,0 +1,57 @@
+<div class="header-home-menu" [ngClass]="{'white-background': onScroll()}">
+  <div><a href="/">Home</a></div>
+  <div class="learn-more-container">
+    <a class="learn-more-link">Learn more</a>
+    <div class="learn-more">
+      <div class="upperline-learn-more"></div>
+      <p><a>Jeju Car Blog</a></p>
+      <p><a>FAQs</a></p>
+    </div>
+
+  </div>
+  <a href="http://181.59.120.30/tamra/admincars/form.php" target="_blank">Self check-in</a>
+  <a href="/contact-us">Contact us</a>
+  <div class="profile-container">
+    <a class="logo1">
+      <img alt="profile logo" src="assets/svg/user.svg">
+    </a>
+    <a class="logo2">
+      <img alt="profile logo" src="assets/svg/profile.svg">
+    </a>
+    <div class="profile-more">
+      <div class="upperline-profile-more"></div>
+      <p><a href="/account">My account</a></p>
+      <p (click)="openLoginDialog()"><a>Log in</a></p>
+      <p (click)="openDialog()"><a>Sign up</a></p>
+    </div>
+  </div>
+</div>
+
+<div class="header-home-menu-mobile" [ngClass]="{'white-background': onScroll()}">
+  <div class="profile-container">
+    <a class="logo1">
+      <img (click)="openMobileMenu()" alt="profile logo" src="assets/svg/user.svg">
+    </a>
+    <a class="logo2">
+      <img (click)="openMobileMenu()" alt="profile logo" src="assets/svg/profile.svg">
+    </a>
+    <div class="mobile-menu" *ngIf="isMobileMenuOpened">
+      <div class="upperline-profile-more"></div>
+      <p><a href="/account">My account</a></p>
+      <p (click)="openLoginDialog()"><a>Log in</a></p>
+      <p (click)="openDialog()"><a>Sign up</a></p>
+      <div class="vertical-line"></div>
+      <nb-accordion>
+        <nb-accordion-item>
+          <nb-accordion-item-header [ngClass]="{'white-background': onScroll()}">Learn more</nb-accordion-item-header>
+          <nb-accordion-item-body>
+            <p><a>Jeju Car Blog</a></p>
+            <p><a>FAQs</a></p>
+          </nb-accordion-item-body>
+        </nb-accordion-item>
+      </nb-accordion>
+      <p><a href="http://181.59.120.30/tamra/admincars/form.php" target="_blank">Self check-in</a></p>
+      <p><a href="/contact-us">Contact us</a></p>
+    </div>
+  </div>
+</div>

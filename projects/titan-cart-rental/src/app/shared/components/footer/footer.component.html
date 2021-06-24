@@ -1,0 +1,195 @@
+<div class="footer">
+  <div class="footer-container">
+    <div class="social-column">
+      <div class="social-icons-container">
+        <a href="https://www.facebook.com/Tamracarrentals" target="_blank"><img alt="facebook" src="../../../../assets/icons/facebook.png"></a>
+        <a href="https://www.instagram.com/tamrarentacar/" target="_blank"><img alt="instagram" src="../../../../assets/icons/instagram.png"></a>
+        <a href="https://www.linkedin.com/company/tamrarentacar" target="_blank"><img alt="in" src="../../../../assets/icons/IN.png"></a>
+        <a href="https://www.youtube.com/channel/UCI9g26Qy5kQiWm_qi7SlGYQ" target="_blank"><img alt="youtube" src="../../../../assets/icons/youtube.png"></a>
+        <a href="https://www.tiktok.com/@tamrarentacar?language=en&sec_uid=MS4wLjABAAAA574aDYoT7bwZLGGY2ChaSxo4CFk2KPt9ulZM8qP5TV_5MZVxux_VoQKkHR_a0Wgo&u_code=dakfalj8dmh5bj&utm_campaign=client_share&app=musically&utm_medium=ios&user_id=6791316264344077317&tt_from=copy&utm_source=copy&source=h5_m" target="_blank"><img alt="tiktok" src="../../../../assets/icons/tiktok.png"></a>
+        <a><img alt="blog" src="../../../../assets/icons/blog.png"></a>
+      </div>
+      <div class="footer-language">
+        <div class="language-container">
+          <div class="vertical-line"></div>
+          <div class="horizontal-line"></div>
+          <div *ngIf="showLanguagesDropdown" class="other-languages-container">
+            <a href="https://www.tamrarentcar.com/">
+              <img alt="english" src="../../../../assets/icons/korea-language-icon.png">
+              <span>Korean</span>
+            </a>
+          </div>
+          <div (click)="showLanguages()" class="language-button-container">
+            <div class="language-button">
+              <img alt="english" src="../../../../assets/icons/english.png">
+              <span>English</span>
+              <i *ngIf="!showLanguagesDropdown" class="arrow-down"></i>
+              <i *ngIf="showLanguagesDropdown" class="arrow-up"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <div class="tamra-links">
+        <p class="bold-link">Tamra</p>
+        <a href="/about-us">About Us</a>
+        <a>Cancellation Policies</a>
+        <a>Private Policy</a>
+        <a>E-Commerce Standard</a>
+        <a>Terms</a>
+        <a href="/contact-us">Contact Us</a>
+      </div>
+
+      <div class="locations-links">
+        <p class="bold-link">Locations</p>
+        <a>Seoul</a>
+        <a>Gwangju</a>
+        <a>Jeju Island</a>
+      </div>
+
+      <div class="explore-links">
+        <p class="bold-link">Explore</p>
+        <a>Book a car</a>
+        <a>Self Check-In</a>
+        <a>My Account</a>
+        <a>Edit / Cancel Booking</a>
+        <a>FAQs</a>
+        <a>Get Help</a>
+        <a>Insurance</a>
+        <a>Jeju Car Blog</a>
+        <a>한국어</a>
+      </div>
+
+      <div class="makes-links">
+        <p class="bold-link">Makes</p>
+        <a>Tesla</a>
+        <a>BMW</a>
+        <a>Citroën</a>
+        <a>KIA</a>
+        <a>Hyundai</a>
+        <a>Genesis</a>
+        <a>Ssangyong</a>
+        <a>Renault Samsung</a>
+        <a>Mini</a>
+        <a>Chevrolet</a>
+      </div>
+
+      <div class="vehicle-types-links">
+        <p class="bold-link">Vehicle Types</p>
+        <a>Vans</a>
+        <a>Luxury</a>
+        <a>Convertibles</a>
+        <a>Premium Standard</a>
+        <a>SUVs</a>
+        <a>Midsize Suvs</a>
+        <a>Electric</a>
+        <a>Medium Compact</a>
+        <a>Compact</a>
+        <a>Standard</a>
+        <a>Minibus</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-links-mobile">
+    <nb-accordion>
+      <nb-accordion-item>
+        <nb-accordion-item-header>Tamra</nb-accordion-item-header>
+        <nb-accordion-item-body>
+          <p><a href="/about-us">About Us</a></p>
+          <p><a>Cancellation Policies</a></p>
+          <p><a>Private Policy</a></p>
+          <p><a>E-Commerce Standard</a></p>
+          <p><a>Terms</a></p>
+          <p><a href="/contact-us">Contact Us</a></p>
+        </nb-accordion-item-body>
+      </nb-accordion-item>
+    </nb-accordion>
+
+    <nb-accordion>
+      <nb-accordion-item>
+        <nb-accordion-item-header>Locations</nb-accordion-item-header>
+        <nb-accordion-item-body>
+          <p><a>Seoul</a></p>
+          <p><a>Gwangju</a></p>
+          <p><a>Jeju Island</a></p>
+        </nb-accordion-item-body>
+      </nb-accordion-item>
+    </nb-accordion>
+
+    <nb-accordion>
+      <nb-accordion-item>
+        <nb-accordion-item-header>Explore</nb-accordion-item-header>
+        <nb-accordion-item-body>
+          <p><a>Book a car</a></p>
+          <p><a>Self Check-In</a></p>
+          <p><a>My Account</a></p>
+          <p><a>Edit / Cancel Booking</a></p>
+          <p><a>FAQs</a></p>
+          <p><a>Get Help</a></p>
+          <p><a>Insurance</a></p>
+          <p><a>Jeju Car Blog</a></p>
+          <p><a>한국어</a></p>
+        </nb-accordion-item-body>
+      </nb-accordion-item>
+    </nb-accordion>
+
+    <nb-accordion>
+      <nb-accordion-item>
+        <nb-accordion-item-header>Makes</nb-accordion-item-header>
+        <nb-accordion-item-body>
+          <p><a>Tesla</a></p>
+          <p><a>BMW</a></p>
+          <p><a>Citroën</a></p>
+          <p><a>KIA</a></p>
+          <p><a>Hyundai</a></p>
+          <p><a>Genesis</a></p>
+          <p><a>Ssangyong</a></p>
+          <p><a>Renault Samsung</a></p>
+          <p><a>Mini</a></p>
+          <p><a>Chevrolet</a></p>
+        </nb-accordion-item-body>
+      </nb-accordion-item>
+    </nb-accordion>
+
+    <nb-accordion>
+      <nb-accordion-item>
+        <nb-accordion-item-header>Vehicle Types</nb-accordion-item-header>
+        <nb-accordion-item-body>
+          <p><a>Vans</a></p>
+          <p><a>Luxury</a></p>
+          <p><a>Convertibles</a></p>
+          <p><a>Premium Standard</a></p>
+          <p><a>SUVs</a></p>
+          <p><a>Midsize Suvs</a></p>
+          <p><a>Electric</a></p>
+          <p><a>Medium Compact</a></p>
+          <p><a>Compact</a></p>
+          <p><a>Standard</a></p>
+          <p><a>Minibus</a></p>
+        </nb-accordion-item-body>
+      </nb-accordion-item>
+    </nb-accordion>
+  </div>
+
+  <div class="footer-info">
+    <div class="vertical-line"></div>
+    <div>
+      <p>Tamra RentCar CO.,</p>
+      <p>LTD Address 5 Gonghang-ro, Jeju Island, Republic of South Korea,</p>
+      <p>63138</p>
+      <p>CEO Park Yong Kwon</p>
+      <p>Business Registration Number 010-6510061-30-2-00005</p>
+      <p>Phone +82 (0) 64 742-3300 FAX +82 (0) 64 805-5533</p>
+    </div>
+  </div>
+</div>
+
+<div class="footer-white-part">
+  <div class="footer-white-part-content">
+    <p>2020 ©Tamra rent a car international</p>
+    <p>bookings@tamrarentacar.com</p>
+  </div>
+</div>

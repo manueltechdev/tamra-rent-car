@@ -1,0 +1,329 @@
+.seoul-modal {
+  box-shadow: 3px 4px 12px #00000029;
+  border-radius: 25px;
+  position: relative;
+  height: 100%;
+  max-height: 90vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+
+  .close-dialog {
+    position: absolute;
+    top: 20px;
+    width: 30px;
+    right: 20px;
+    cursor: pointer;
+  }
+  .subtitle {
+    font: normal normal 300 15px/15px Poppins;
+    letter-spacing: 1.95px;
+    color: #696969;
+    text-transform: uppercase;
+    margin-top: 40px;
+  }
+
+  .title {
+    font: normal normal 600 50px/55px Source Serif Pro;
+    letter-spacing: 0px;
+    color: #E54300;
+    margin-bottom: 60px;
+  }
+
+  .send-message-button-container {
+    button {
+      background: none;
+      color: inherit;
+      border: none;
+      padding: 0;
+      font: inherit;
+      cursor: pointer;
+      outline: inherit;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 10px 5px;
+    }
+
+    div {
+      border: 1px solid #E54300;
+      border-radius: 71px;
+      opacity: 1;
+      font: normal normal bold 14px/21px Poppins;
+      letter-spacing: 0;
+      color: #000000;
+      width: 160px;
+      float: right;
+      margin: 40px 0 20px 0;
+      cursor: pointer;
+
+      &:hover {
+        color: #E54300;
+      }
+
+      img {
+        margin-left: 10px;
+        width: 10px;
+      }
+    }
+  }
+
+  .seoul-comments {
+    width: 100%;
+    margin: 0 20px 20px 20px;
+
+    p {
+      text-align: left;
+      font: italic normal 300 14px/18px Poppins;
+      letter-spacing: 0px;
+      color: #000000;
+      opacity: 1;
+      max-width: 780px;
+      margin-left: 10px;
+    }
+  }
+
+  ::ng-deep nb-card-body {
+    padding: 0;
+    max-width: 840px;
+  }
+
+  ::ng-deep nb-card-body.seoul-card {
+    padding: 0 40px !important;
+  }
+
+  .form-container {
+    .seoul-form-row {
+      display: flex;
+    }
+
+    input, textarea, ::ng-deep nb-select {
+      box-shadow: 2px 7px 10px #00000029;
+      border-radius: 71px;
+      width: 100%;
+    }
+
+    ::ng-deep nb-select {
+      max-width: 100%;
+      box-shadow: unset;
+      width: 230px;
+      margin-left: 20px;
+
+      button {
+        width: 100%;
+        box-shadow: 2px 7px 10px #00000029;
+        border-radius: 71px;
+        min-width: 0;
+      }
+    }
+
+    textarea {
+      min-height: 120px;
+      border-radius: 20px;
+    }
+
+    .form-label {
+      font: normal normal bold 14px/21px Poppins;
+      letter-spacing: 0;
+      margin-bottom: 15px;
+      margin-left: 10px;
+      display: block;
+
+      span {
+        color: #E54300;
+      }
+    }
+
+    .seoul-form-field {
+      margin: 0 20px 40px 20px;
+      width: 50%;
+
+      div {
+        display: flex;
+      }
+    }
+
+    ::ng-deep nb-icon {
+      font-size: 32px;
+    }
+
+    ::ng-deep mat-datepicker-toggle {
+      position: absolute;
+      right: 10px;
+      bottom: 8px;
+      pointer-events: none;
+
+      .mat-button-wrapper svg {
+        color: #E54300;
+      }
+    }
+
+    ::ng-deep .nb-form-control-container {
+      position: relative;
+    }
+
+    .send-message-button-container {
+      button {
+        background: none;
+        color: inherit;
+        border: none;
+        padding: 0;
+        font: inherit;
+        cursor: pointer;
+        outline: inherit;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 10px 5px;
+      }
+
+      div {
+        border: 1px solid #E54300;
+        border-radius: 71px;
+        opacity: 1;
+        font: normal normal bold 14px/21px Poppins;
+        letter-spacing: 0;
+        color: #000000;
+        width: 160px;
+        float: right;
+        cursor: pointer;
+
+        &:hover {
+          color: #E54300;
+        }
+
+        img {
+          margin-left: 10px;
+          width: 10px;
+        }
+      }
+    }
+  }
+}
+
+.contact-us-message {
+  .success {
+    font: normal normal normal 17px/20px Poppins;
+    letter-spacing: 0px;
+    color: limegreen;
+    opacity: 1;
+    margin-left: 30px;
+  }
+
+  .error {
+    font: normal normal normal 17px/20px Poppins;
+    letter-spacing: 0px;
+    color: red;
+    opacity: 1;
+    margin-left: 30px;
+  }
+}
+
+::ng-deep .nb-theme-template .overlay-backdrop {
+  background: #000000 0% 0% no-repeat padding-box;
+  opacity: 0.5;
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+  filter: blur(1px);
+}
+
+::ng-deep .nb-theme-template [nbInput] {
+  padding: 0.8rem 1rem !important;
+}
+
+::ng-deep .nb-theme-template nb-card-header {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+::ng-deep .nb-theme-template [nbInput].status-basic:focus,
+::ng-deep .nb-theme-template nb-select.appearance-outline.status-basic .select-button:focus {
+  background-color: white;
+  border-color: #E54300;
+}
+
+::ng-deep .header-container {
+  background: #ffffff;
+
+  .header-logo2,
+  .logo2 {
+    display: inline-block!important;
+  }
+
+  .header-logo1,
+  .logo1 {
+    display: none!important;
+  }
+
+  a {
+    color: #000000!important;
+  }
+
+  .learn-more,
+  .profile-more {
+    background-color: rgba(169, 169, 169, 0.2) !important;
+  }
+
+  .vertical-line {
+    background: #000000!important;
+  }
+}
+
+::ng-deep .nb-theme-template nb-layout-header.fixed ~ .layout-container {
+  padding-top: 80px;
+}
+
+::ng-deep .nb-theme-template nb-accordion-item-header {
+  color: #000000!important;
+}
+
+@media all and(max-width: 1200px) {
+  ::ng-deep .nb-theme-template nb-card.seoul-modal {
+    background: #ffffff;
+    width: auto;
+
+    nb-card {
+      width: auto;
+    }
+  }
+
+  ::ng-deep .seoul-modal nb-card-body {
+    max-width: 90vw!important;
+  }
+}
+
+@media all and(max-width: 768px) {
+  .seoul-modal .form-container .seoul-form-row {
+    flex-wrap: wrap;
+  }
+
+  .seoul-modal .form-container .seoul-form-field {
+    width: 100%;
+  }
+}
+
+@media all and(max-width: 600px) {
+  .seoul-modal {
+    width: 300px;
+  }
+
+  .seoul-modal .form-container .seoul-form-field div {
+    flex-wrap: wrap;
+  }
+
+  .seoul-modal .form-container nb-select {
+    margin: 10px 0;
+    width: 100%;
+  }
+
+  .seoul-modal nb-card-body.seoul-card {
+    padding: 0 20px !important;
+  }
+
+  .seoul-modal ::ng-deep nb-form-field {
+    width: 100%;
+  }
+}

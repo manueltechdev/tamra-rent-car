@@ -1,0 +1,74 @@
+<nb-card [formGroup]="rangeForm" class="home-search-mobile">
+  <nb-card-body class="pick-up-container">
+    <div class="container-range__card-mobile" style="position: relative">
+      <nb-form-field>
+        <input fullWidth
+               shape="semi-round"
+               formControlName="rangeStart"
+               nbInput placeholder="Pick-up Date:"
+               [nbDatepicker]="formpickerstart">
+        <mat-datepicker-toggle matSuffix [for]="formpickerstart"></mat-datepicker-toggle>
+        <nb-datepicker #formpickerstart></nb-datepicker>
+      </nb-form-field>
+    </div>
+
+    <div  class="container-range__card-mobile">
+      <nb-select  fullWidth
+                  shape="semi-round" formControlName="formHour" placeholder="Pick-up Time:">
+        <nb-option [value]="option"
+                   *ngFor="let option of fromHours">
+          {{ option }}
+        </nb-option>
+
+      </nb-select>
+    </div>
+  </nb-card-body>
+
+  <nb-card-body class="pick-up-container">
+    <div class="container-range__card-mobile" style="position: relative">
+      <nb-form-field>
+        <input fullWidth
+               shape="semi-round"
+               formControlName="rangeEnd"
+               nbInput placeholder="Drop-off Date:"
+               [nbDatepicker]="formpickerend">
+        <mat-datepicker-toggle matSuffix [for]="formpickerend"></mat-datepicker-toggle>
+        <nb-datepicker #formpickerend></nb-datepicker>
+      </nb-form-field>
+    </div>
+
+    <div class="container-range__card-mobile">
+      <nb-select  fullWidth
+                  shape="semi-round" formControlName="formHour" placeholder="Drop-off Time:">
+        <nb-option [value]="option"
+                   *ngFor="let option of untilHour">
+          {{ option }}
+        </nb-option>
+
+      </nb-select>
+    </div>
+  </nb-card-body>
+
+  <nb-card-body>
+    <div  class="container-range__card-mobile">
+      <nb-form-field>
+        <nb-select  formControlName="where" placeholder="Where" fullWidth>
+          <nb-option *ngFor="let where of filteredControlOptions$ | async" [value]="where">
+            {{where.islocation}}
+          </nb-option>
+        </nb-select>
+      </nb-form-field>
+    </div>
+  </nb-card-body>
+
+  <div class="pick-up-info">
+    <p>*Our pick-up and return hours are from 08:00 - 20:00.</p>
+  </div>
+
+  <div class="send-message-button-container">
+    <div>
+      <button type="submit">Continue <img alt="send message" src="../../../assets/icons/arrow-right.png"></button>
+    </div>
+  </div>
+</nb-card>
+

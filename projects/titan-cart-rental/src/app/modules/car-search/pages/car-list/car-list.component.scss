@@ -1,0 +1,144 @@
+.car-list-no-results {
+  margin-top: 160px;
+  margin-bottom: 160px;
+  min-height: 200px;
+
+  h1 {
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  p {
+    text-align: center;
+    padding: 0 20px;
+  }
+}
+
+.titan-filters-container {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.cars-search-page-container {
+  margin-top: 160px;
+}
+
+.cars-search-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 40px;
+  row-gap: 60px;
+  position: relative;
+
+  titan-card-car {
+    width: 30%;
+    max-width: 528px;
+    height: 420px;
+
+    ::ng-deep nb-card {
+      width: 100%;
+      padding: 16px 0;
+
+      nb-card-body {
+        padding: 0 24px;
+      }
+    }
+  }
+
+  titan-card-car-skeleton {
+    width: 100%;
+    max-width: 480px;
+  }
+}
+
+.see-more-cars-container {
+  display: flex;
+  justify-content: center;
+  margin: 200px 0;
+  font: normal normal bold 14px/28px Poppins;
+  letter-spacing: 0;
+  opacity: 1;
+
+  .see-more-cars-container-text-less,
+  .see-more-cars-container-text-more {
+    color: #696969;
+    cursor: pointer;
+  }
+
+  .see-more-cars-container-text-less-icon,
+  .see-more-cars-container-text-more-icon {
+    margin: 0 25px;
+  }
+
+  .see-more-cars-container-text-orange {
+    color: #E54300;
+  }
+}
+
+.points-right {
+  position: absolute;
+  opacity: 1;
+  top: 140px;
+  right: 0;
+}
+
+.points-left {
+  position: absolute;
+  opacity: 1;
+  top: 1050px;
+  left: 0;
+}
+
+.points-left-position {
+  top: 600px;
+}
+
+@media all and (max-width: 1250px) {
+  .cars-search-container {
+    titan-card-car {
+      width: 50%;
+    }
+  }
+
+  .points-right,
+  .points-left {
+    display: none;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .cars-search-container {
+    titan-card-car {
+      width: 60%;
+    }
+  }
+
+  .see-more-cars-container {
+    margin: 100px 0;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .cars-search-page-container,
+  .car-list-no-results {
+    margin-top: 360px;
+  }
+}
+
+@media all and (max-width: 630px) {
+  .cars-search-container {
+    titan-card-car {
+      width: 70%;
+    }
+  }
+}
+
+@media all and (max-width: 540px) {
+  .cars-search-container {
+    titan-card-car {
+      width: 90%;
+    }
+  }
+}

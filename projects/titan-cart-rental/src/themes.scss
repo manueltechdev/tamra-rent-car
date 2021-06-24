@@ -1,0 +1,190 @@
+@import '~@nebular/theme/styles/theming';
+@import '~@nebular/theme/styles/themes/default';
+@import 'https://fonts.googleapis.com/css?family=Source Serif Pro';
+@import 'https://fonts.googleapis.com/css?family=Poppins';
+$nb-themes: nb-register-theme((
+
+  background-basic-color-1: white,
+  background-basic-color-2: white,
+  background-basic-color-3: white,
+  background-basic-color-4: white,
+
+  border-basic-color-1: white,
+  border-basic-color-2: white,
+  border-basic-color-3: white,
+  border-basic-color-4: white,
+  border-basic-color-5: white,
+), template, default);
+
+
+.title-addons{
+  text-align: left;
+  font: normal normal 300 14px/23px Poppins;
+  letter-spacing: 1.12px;
+  color: #696969;
+  opacity: 1;
+}
+
+/* Colors: */
+$color-ffffff: #FFFFFF;
+$color-e54300: #E54300;
+$color-696969: #696969;
+$color-4d4d4d: #4D4D4D;
+$color-000000: #000000;
+
+/* Font/text values */
+$font-family-poppins: Poppins;
+$font-family-source-serif-pro: Source Serif Pro;
+$font-style-normal: normal;
+$font-weight-300: 300px;
+$font-weight-600: 600px;
+$font-weight-bold: bold;
+$font-weight-medium: medium;
+$font-weight-normal: normal;
+$font-size-12: 12px;
+$font-size-14: 14px;
+$font-size-16: 16px;
+$font-size-17: 17px;
+$font-size-20: 20px;
+$font-size-22: 22px;
+$font-size-60: 60px;
+$character-spacing-0: 0px;
+$character-spacing-2-86: 2.86px;
+$line-spacing-18: 18px;
+$line-spacing-20: 20px;
+$line-spacing-21: 21px;
+$line-spacing-23: 23px;
+$line-spacing-24: 24px;
+$line-spacing-25: 25px;
+$line-spacing-65: 65px;
+$line-spacing-75: 75px;
+$text-transform-uppercase: uppercase;
+
+/* Character Styles */
+.informacion {
+  font-family: $font-family-poppins;
+  font-style: $font-style-normal;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-12;
+  line-height: $line-spacing-18;
+  letter-spacing: $character-spacing-0;
+  color: $color-000000;
+}
+.menu {
+  font-family: $font-family-poppins;
+  font-style: $font-style-normal;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-14;
+  line-height: $line-spacing-21;
+  letter-spacing: $character-spacing-0;
+  color: $color-ffffff;
+}
+.learn-more {
+  font-family: $font-family-poppins;
+  font-style: $font-style-normal;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-14;
+  line-height: $line-spacing-21;
+  letter-spacing: $character-spacing-0;
+  color: $color-000000;
+}
+.texto-titulos-pie-de-pagina {
+  font-family: $font-family-poppins;
+  font-style: $font-style-normal;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-16;
+  line-height: $line-spacing-25;
+  letter-spacing: $character-spacing-0;
+  color: $color-000000;
+}
+.titulo-browse-by-category {
+  font-family: $font-family-poppins;
+  font-style: $font-style-normal;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-17;
+  line-height: $line-spacing-24;
+  letter-spacing: $character-spacing-0;
+  color: $color-000000;
+}
+.titulos-texto-interno {
+  font-family: $font-family-poppins;
+  font-style: $font-style-normal;
+  font-weight: $font-weight-600;
+  font-size: $font-size-20;
+  line-height: $line-spacing-23;
+  letter-spacing: $character-spacing-0;
+  color: $color-000000;
+}
+.textos-vinculos-pie-de-pagina {
+  font-family: $font-family-poppins;
+  font-style: $font-style-normal;
+  font-weight: $font-weight-medium;
+  font-size: $font-size-12;
+  line-height: $line-spacing-18;
+  letter-spacing: $character-spacing-0;
+  color: $color-000000;
+}
+.datos-inferiores {
+  font-family: $font-family-poppins;
+  font-style: $font-style-normal;
+  font-weight: $font-weight-medium;
+  font-size: $font-size-12;
+  line-height: $line-spacing-18;
+  letter-spacing: $character-spacing-0;
+  color: $color-4d4d4d;
+}
+.barra-de-busqueda {
+  font-family: $font-family-poppins;
+  font-style: $font-style-normal;
+  font-weight: $font-weight-medium;
+  font-size: $font-size-20;
+  line-height: $line-spacing-75;
+  letter-spacing: $character-spacing-0;
+  color: $color-4d4d4d;
+}
+.subtitulo {
+  font-family: $font-family-poppins;
+  font-style: $font-style-normal;
+  font-weight: $font-weight-medium;
+  font-size: $font-size-22;
+  line-height: $line-spacing-75;
+  letter-spacing: $character-spacing-0;
+  color: $color-ffffff;
+}
+.titulos-seccion {
+  font-family: $font-family-poppins;
+  font-style: $font-style-normal;
+  font-weight: $font-weight-300;
+  font-size: $font-size-22;
+  line-height: $line-spacing-75;
+  letter-spacing: $character-spacing-2-86;
+  color: $color-696969;
+  text-transform: $text-transform-uppercase;
+}
+.texto {
+  font-family: $font-family-poppins;
+  font-style: $font-style-normal;
+  font-weight: $font-weight-normal;
+  font-size: $font-size-17;
+  line-height: $line-spacing-20;
+  letter-spacing: $character-spacing-0;
+  color: $color-000000;
+}
+.titulos-sobre-fondo-color {
+  font-family: $font-family-source-serif-pro;
+  font-style: $font-style-normal;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-60;
+  line-height: $line-spacing-65;
+  letter-spacing: $character-spacing-0;
+  color: $color-ffffff;
+}
+.titulos {
+  font-family: $font-family-source-serif-pro;
+  font-style: $font-style-normal;
+  font-weight: $font-weight-600;
+  font-size: $font-size-60;
+  line-height: $line-spacing-65;
+  letter-spacing: $character-spacing-0;
+  color: $color-e54300;
+}

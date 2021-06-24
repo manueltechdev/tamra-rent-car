@@ -1,0 +1,78 @@
+@import "../../../../../themes";
+.title-insurence > img,
+.title-insurence > h1 {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+  text-align: left;
+  font: normal normal 600 20px/23px Poppins;
+  letter-spacing: 0px;
+  color: #000000;
+  opacity: 1;
+}
+.container-car-insurance {
+  display: inline;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  &__description {
+    float: left;
+    width: 70%;
+    text-align: left;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+    span{
+      font: normal normal bold 17px/23px Poppins;
+      letter-spacing: 0px;
+      color: #000000;
+    }
+    p{
+      margin:0;
+      font: normal normal normal 17px/23px Poppins;
+      letter-spacing: 0px;
+      color: #000000;
+    }
+    small{
+      text-align: left;
+      font: normal normal 500 12px/18px Poppins;
+      letter-spacing: 0px;
+      color: #E54300;
+      opacity: 1;
+    }
+    a{
+      text-align: left;
+      font: normal normal bold 17px/23px Poppins;
+      letter-spacing: 0px;
+      color: #E54300;
+    }
+    .policy > img,
+    .policy > p {
+        display: inline-block;
+        vertical-align: middle;
+    }
+  }
+
+  &__actions {
+    float: left;
+    width: 30%;
+    margin-top: 1%;
+    &__price {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+  }
+
+  &__headline-styles {
+    margin: 0;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  h6 {
+    color: $color-e54300;
+  }
+
+
+}

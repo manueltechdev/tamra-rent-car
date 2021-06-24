@@ -1,0 +1,13 @@
+
+<button (click)="open(dialog)">
+  open
+</button>
+
+<ng-template  #dialog let-data let-ref="dialogRef">
+  <nb-card>
+    <nb-card-header>
+      <titan-header></titan-header>
+    </nb-card-header>
+      <titan-search-bar></titan-search-bar>
+  </nb-card>
+</ng-template>

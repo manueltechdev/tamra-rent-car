@@ -1,0 +1,133 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "titan-cart-rental": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/titan-cart-rental",
+      "sourceRoot": "projects/titan-cart-rental/src",
+      "prefix": "titan",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/titan-cart-rental",
+            "index": "projects/titan-cart-rental/src/index.html",
+            "main": "projects/titan-cart-rental/src/main.ts",
+            "polyfills": "projects/titan-cart-rental/src/polyfills.ts",
+            "tsConfig": "projects/titan-cart-rental/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/titan-cart-rental/src/favicon.ico",
+              "projects/titan-cart-rental/src/assets"
+            ],
+            "styles": [
+              "projects/titan-cart-rental/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "environments/environment.ts",
+                  "with": "environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "titan-cart-rental:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "titan-cart-rental:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "titan-cart-rental:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/titan-cart-rental/src/test.ts",
+            "polyfills": "projects/titan-cart-rental/src/polyfills.ts",
+            "tsConfig": "projects/titan-cart-rental/tsconfig.spec.json",
+            "karmaConfig": "projects/titan-cart-rental/karma.conf.js",
+            "assets": [
+              "projects/titan-cart-rental/src/favicon.ico",
+              "projects/titan-cart-rental/src/assets"
+            ],
+            "styles": [
+              "projects/titan-cart-rental/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/titan-cart-rental/tsconfig.app.json",
+              "projects/titan-cart-rental/tsconfig.spec.json",
+              "projects/titan-cart-rental/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/titan-cart-rental/e2e/protractor.conf.js",
+            "devServerTarget": "titan-cart-rental:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "titan-cart-rental:serve:production"
+            }
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "analytics": "9dc83a65-5ba1-4dc9-a464-645300d38ddd",
+    "defaultCollection": "@datorama/akita"
+  },
+  "defaultProject": "titan-cart-rental"
+}

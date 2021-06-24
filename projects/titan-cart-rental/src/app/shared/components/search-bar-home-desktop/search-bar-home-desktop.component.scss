@@ -1,0 +1,24 @@
+.container-range__btn-search-desktop {
+  margin-left: 8px;
+}
+
+.input-left {
+  border-top-left-radius: 71px !important;
+  border-bottom-left-radius: 71px !important;
+}
+
+.input-right {
+  ::ng-deep button {
+    border-top-right-radius: 12px !important;
+    border-bottom-right-radius: 12px !important;
+  }
+}
+
+.vertical-line {
+  width: 1px;
+  background-color: #DBDBDB;
+  height: 40px;
+  display: inline-block;
+  position: relative;
+  top: 10px;
+}

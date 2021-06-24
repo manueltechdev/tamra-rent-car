@@ -1,0 +1,232 @@
+<div class="contact-us-container">
+  <div class="contact-us-banner">
+    <div class="left-dots-container">
+      <div class="dots-line">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <div class="dots-line">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <div class="dots-line">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <div class="dots-line">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+    </div>
+
+    <div class="right-dots-container">
+      <div class="dots-line">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <div class="dots-line">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <div class="dots-line">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <div class="dots-line">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+    </div>
+    <div class="contact-us-banner-text">
+      <h1>Contact us</h1>
+      <p>Got a question?</p>
+    </div>
+  </div>
+  <div class="contact-us-content">
+    <div class="contact-us-text-container">
+      <div class="contact-us-text">
+        <p>Before emailing us, we recommend you first read our <a href="/help-center">FAQ</a> section and <a>Jeju Car Blog</a> – as you might find the answers your are looking for. And no we do not offer long-term rentals.</p>
+        <p>If you have a special request please do not hesitate to reach out to us at <a href="mailto:bookings@tamrarentacar.com">bookings@tamrarentacar.com</a>. If you are a travel influencer or looking to contact us about special marketing oportunies please Contact us at <a href="mailto:sales@tamrarentacar.com">sales@tamrarentacar.com</a> for further evaluation.</p>
+      </div>
+      <div class="grey-vertical-line"></div>
+      <div class="contact-us-text-header">
+        <h1>Thank you for contacting us!</h1>
+      </div>
+    </div>
+
+    <div class="contact-us-text-container contact-us-text-container-mobile">
+      <div class="contact-us-text-header">
+        <h1>Thank you for contacting us!</h1>
+      </div>
+      <div class="contact-us-text">
+        <p>Before emailing us, we recommend you first read our <a href="/help-center">FAQ</a> section and <a>Jeju Car Blog</a> – as you might find the answers your are looking for. And no we do not offer long-term rentals.</p>
+        <p>If you have a special request please do not hesitate to reach out to us at <a href="mailto:bookings@tamrarentacar.com">bookings@tamrarentacar.com</a>. If you are a travel influencer or looking to contact us about special marketing oportunies please Contact us at <a href="mailto:sales@tamrarentacar.com">sales@tamrarentacar.com</a> for further evaluation.</p>
+      </div>
+    </div>
+
+    <div class="contact-us-form-container">
+      <div class="contact-us-form">
+        <nb-card>
+          <nb-card-body class="example-items-col">
+            <form [formGroup]="contactUsForm" (ngSubmit)="sendMessage()">
+              <div class="contact-us-form-field">
+                <label class="form-label">Your name <span> *</span></label>
+                <input [formControl]="name" type="text" nbInput fullWidth shape="round" placeholder="Your Name" required>
+              </div>
+              <div class="contact-us-form-field">
+                <label class="form-label">Email Address <span> *</span></label>
+                <input [formControl]="email" type="email" nbInput fullWidth shape="round" placeholder="youremail@domain.com">
+              </div>
+              <div class="contact-us-form-field">
+                <label class="form-label">Subject <span> *</span></label>
+                <input [formControl]="subject" type="text" nbInput fullWidth shape="round" placeholder="RW:">
+              </div>
+              <div class="contact-us-form-field">
+                <label class="form-label">Message <span> *</span></label>
+                <textarea [formControl]="message" nbInput fullWidth shape="round" placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."></textarea>
+              </div>
+              <div class="contact-us-form-field">
+                <label class="form-label">How did you find our website?<span> *</span></label>
+                <nb-select placeholder="Choose an option" [formControl]="option">
+                  <nb-option value="Google">Google</nb-option>
+                  <nb-option value="Word-of-Mouth">Word-of-Mouth</nb-option>
+                  <nb-option value="Facebook">Facebook</nb-option>
+                  <nb-option value="Other">Other</nb-option>
+                </nb-select>
+              </div>
+
+              <div class="contact-us-message">
+                <p *ngIf="showError" class="error">All field are required</p>
+                <p *ngIf="showSuccess" class="success">The message has been sent</p>
+              </div>
+
+              <div class="send-message-button-container">
+                <div>
+                  <button type="submit">Send Message <img alt="send message" src="../../../assets/icons/arrow-right.png"></button>
+                </div>
+              </div>
+            </form>
+          </nb-card-body>
+        </nb-card>
+      </div>
+
+      <div class="contact-us-form-info">
+        <p class="grey-text">Operating hours</p>
+        <p>Monday through Sunday</p>
+        <p class="bold-text">8:00 AM - 20:00 PM</p>
+
+        <div class="contact-information">
+          <p class="grey-text">CONTACT INFORMATION</p>
+          <p>Phone +82 (0) 64 742-3300</p>
+          <p>Address 5 Gonghang-ro, Jeju Island, Republic of South Korea, 63138</p>
+        </div>
+
+        <div class="map">
+          <iframe src="https://maps.google.com/maps?q=33.5048101,126.4968973&z=17&output=embed" style="border: 0"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-us-form-container contact-us-form-container-mobile">
+      <div class="contact-us-form-info">
+        <p class="grey-text">Operating hours</p>
+        <p>Monday through Sunday</p>
+        <p class="bold-text">8:00 AM - 20:00 PM</p>
+
+        <div class="contact-information">
+          <p class="grey-text">CONTACT INFORMATION</p>
+          <p>Phone +82 (0) 64 742-3300</p>
+          <p>Address 5 Gonghang-ro, Jeju Island, Republic of South Korea, 63138</p>
+        </div>
+      </div>
+      <div class="map">
+        <iframe src="https://maps.google.com/maps?q=33.5048101,126.4968973&z=17&output=embed" style="border: 0"></iframe>
+      </div>
+
+      <div class="contact-us-form">
+        <nb-card>
+          <nb-card-body class="example-items-col">
+            <form [formGroup]="contactUsForm" (ngSubmit)="sendMessage()">
+              <div class="contact-us-form-field">
+                <label class="form-label">Your name <span> *</span></label>
+                <input [formControl]="name" type="text" nbInput fullWidth shape="round" placeholder="Your Name" required>
+              </div>
+              <div class="contact-us-form-field">
+                <label class="form-label">Email Address <span> *</span></label>
+                <input [formControl]="email" type="email" nbInput fullWidth shape="round" placeholder="youremail@domain.com">
+              </div>
+              <div class="contact-us-form-field">
+                <label class="form-label">Subject <span> *</span></label>
+                <input [formControl]="subject" type="text" nbInput fullWidth shape="round" placeholder="RW:">
+              </div>
+              <div class="contact-us-form-field">
+                <label class="form-label">Message <span> *</span></label>
+                <textarea [formControl]="message" nbInput fullWidth shape="round" placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."></textarea>
+              </div>
+              <div class="contact-us-form-field">
+                <label class="form-label">How did you find our website?<span> *</span></label>
+                <nb-select placeholder="Choose an option" [formControl]="option">
+                  <nb-option value="Google">Google</nb-option>
+                  <nb-option value="Word-of-Mouth">Word-of-Mouth</nb-option>
+                  <nb-option value="Facebook">Facebook</nb-option>
+                  <nb-option value="Other">Other</nb-option>
+                </nb-select>
+              </div>
+
+              <div class="contact-us-message">
+                <p *ngIf="showError" class="error">All field are required</p>
+                <p *ngIf="showSuccess" class="success">The message has been sent</p>
+              </div>
+
+              <div class="send-message-button-container">
+                <div>
+                  <button type="submit">Send Message <img alt="send message" src="../../../assets/icons/arrow-right.png"></button>
+                </div>
+              </div>
+            </form>
+          </nb-card-body>
+        </nb-card>
+      </div>
+    </div>
+  </div>
+</div>

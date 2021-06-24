@@ -1,0 +1,69 @@
+.benefits-modal {
+  box-shadow: 3px 4px 12px #00000029;
+  border-radius: 25px;
+  padding: 80px 0 40px 0;
+  position: relative;
+  width: 400px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  max-height: 98vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  .close-dialog {
+    position: absolute;
+    top: 20px;
+    width: 30px;
+    right: 20px;
+    cursor: pointer;
+  }
+
+  .divisor {
+    width: 20px;
+    padding-top: 60px;
+  }
+
+  .content {
+    max-width: 70%;
+    padding-left: 20px;
+    margin-top: 140px;
+
+    h3 {
+      font: normal normal 600 20px/23px Poppins;
+      letter-spacing: 0;
+      color: #000000;
+      opacity: 1;
+      max-width: 200px;
+    }
+
+    p {
+      font: normal normal normal 14px/18px Poppins;
+      letter-spacing: 0;
+      color: #000000;
+      opacity: 1;
+    }
+  }
+
+  .modal-image {
+    position: absolute;
+    right: 0;
+    max-width: 45%;
+  }
+}
+
+::ng-deep .nb-theme-template .overlay-backdrop {
+  background: #000000 0% 0% no-repeat padding-box;
+  opacity: 0.5;
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+  filter: blur(1px);
+}
+
+@media all and(max-width: 600px) {
+  .benefits-modal {
+    width: 300px;
+  }
+}

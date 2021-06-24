@@ -1,0 +1,72 @@
+<div class="benefits-container">
+  <span class="atention">*Our pick-up and return hours are from 08:00 - 20:00.</span>
+  <img class="tamra-img" alt="tamra" src="assets/svg/tamrakr.svg">
+  <h1 class="benefits-text">Benefits for our users.</h1>
+</div>
+<div class="card-container">
+  <nb-card>
+    <nb-card-body *ngIf="benefits.length">
+      <img src="{{benefits[0].benefitsImgAPI}}">
+      <p class="titulos-benefits" style="margin-top: 40px !important;">{{benefits[0].title}}</p>
+      <p class="info-benefits">{{benefits[0].previewText}}</p>
+      <div class="learn-more">
+        <p (click)="openDialog(benefits[0])">Learn more <i class="arrow-right"></i></p>
+      </div>
+    </nb-card-body>
+  </nb-card>
+  <nb-card>
+    <nb-card-body *ngIf="benefits.length">
+      <img src="{{benefits[1].benefitsImgAPI}}">
+      <p class="titulos-benefits" style="margin-top: 40px !important;">{{benefits[1].title}}</p>
+      <p class="info-benefits">{{benefits[1].previewText}}</p>
+      <div class="learn-more">
+        <p (click)="openDialog(benefits[1])">Learn more <i class="arrow-right"></i></p>
+      </div>
+    </nb-card-body>
+  </nb-card>
+  <nb-card>
+    <nb-card-body *ngIf="benefits.length">
+      <img src="{{benefits[2].benefitsImgAPI}}">
+      <p class="titulos-benefits" style="margin-top: 40px !important;">{{benefits[2].title}}</p>
+      <p class="info-benefits">{{benefits[2].previewText}}</p>
+      <div class="learn-more">
+        <p (click)="openDialog(benefits[2])">Learn more <i class="arrow-right"></i></p>
+      </div>
+    </nb-card-body>
+  </nb-card>
+</div>
+<div class="card-container">
+  <nb-card>
+    <nb-card-body *ngIf="benefits.length">
+      <img src="{{benefits[3].benefitsImgAPI}}">
+      <p class="titulos-benefits" style="margin-top: 40px !important;">{{benefits[3].title}}</p>
+      <p class="info-benefits">{{benefits[3].previewText}}</p>
+      <div class="learn-more">
+        <p (click)="openDialog(benefits[3])">Learn more <i class="arrow-right"></i></p>
+      </div>
+    </nb-card-body>
+  </nb-card>
+  <nb-card>
+    <nb-card-body>
+      <img src="assets/icons/icon_FAQ.svg">
+      <p class="titulos-benefits" style="margin-top: 40px !important;">Tamra’s FAQs and Support Community.</p>
+      <p class="info-benefits">Here you can find everything related to renting a car with us, procedures, and much more!</p>
+      <div class="learn-more">
+        <p><a href="/help-center">Learn more <i class="arrow-right"></i></a></p>
+      </div>
+    </nb-card-body>
+  </nb-card>
+  <nb-card>
+    <nb-card-body>
+      <img src="assets/icons/icon_local_favorites.svg">
+      <p class="titulos-benefits" style="margin-top: 40px !important;">Tamra’s Local Favorites.</p>
+      <p class="info-benefits">Recommendations by foreigners and locals living on Jeju Island.</p>
+      <div class="learn-more">
+        <p><a href="https://www.tripadvisor.com/Tourism-g983296-Jeju_Island-Vacations.html" target="_blank">Learn more <i class="arrow-right"></i></a></p>
+      </div>
+    </nb-card-body>
+  </nb-card>
+</div>
+<div class="divisor">
+  <img alt="divisor" src="../../../../assets/icons/divisor.png">
+</div>

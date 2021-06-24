@@ -1,0 +1,32 @@
+<nb-card>
+  <nb-card-body>
+    <div
+      class="card-car-container">
+      <div class="card-car-container__show">
+        <img
+          class="card-car-container__image" alt="car image" [src]="servImage + data.image">
+      </div>
+      <p class="card-car-container__title">{{ data.idescription }}</p>
+      <p class="card-car-container__subtitle">{{ (currency === 'USD' ? convertString(data.isale[1]) : convertString(data.isale[0])) | currency:currency}} / Day</p>
+    </div>
+  </nb-card-body>
+  <nb-card-footer style="padding: 0rem 1.5rem !important;">
+    <div class="card-footer" *ngIf="data.features && data.features.length">
+      <div *ngFor="let badge of data.features | slice: 0:3">
+        <div class="card-car-container__badges" *ngIf="badge[0] !== null && badge[1] !== null">
+          <!--<button
+            *ngFor="let badge of data.features | slice: 0:4"
+            nbButton
+            size="tiny">
+          </button>-->
+          <div class="feature-container">
+            <img [src]="servImage + badge[1]" class="card-car-container__feature" alt="">
+            <p class="card-car-container__badge">{{badge[0]}}<p>
+          </div>
+        </div>
+        <!---->
+      </div>
+    </div>
+  </nb-card-footer>
+</nb-card>
+

@@ -1,0 +1,197 @@
+<img class="img-car" [src]="(urlImage)+(carInfo$ | async)?.image">
+<div class="info-car">
+  <p class="name">{{(carInfo$ | async)?.idescription}}</p>
+  <p class="type">{{(carInfo$ | async)?.tdescription}}</p>
+</div>
+<h1 class="title">Checkout</h1>
+<h2 class="subtitle">PLEASE FILL THE FOLLOWING INFORMATION</h2>
+<h3 class="requeried"><span style="color: #E54300">*</span> These fields are required.</h3>
+<img class="points-right" src="assets/points.svg">
+<div class="container-checkout">
+  <div class="container-checkout__card-details">
+    <titan-sub-total-card>
+      <titan-sub-total-card-title>Rate</titan-sub-total-card-title>
+      <br>
+      <h6 *ngFor="let item of ['QTY', 'Rate', 'Subtotal']; last as last" titanSubtotalHeader [last]="last">
+        {{item}}
+      </h6>
+      <div titanSubtotalBody *ngFor="let fee of subtotalCarRentFee$ | async">
+        <p>{{ fee.days }} days</p>
+        <p>{{ fee.rate | currency:'KRW':'₩': '0.0-0'}} </p>
+        <p>{{ fee.subtotal | currency:'KRW':'₩': '0.0-0'}} </p>
+      </div>
+      <div titanSubtotalBody>
+        <p>
+          {{ 'Insurance x' }}
+          {{ daysSelected$ | async }} days
+        </p>
+        <p>
+          {{ getInsuranceValue$ | async  | currency:'KRW':'₩': '0.0-0' }}
+        </p>
+        <p>
+          {{ ((getInsuranceValue$ | async ) * (daysSelected$ | async)) | currency:'KRW':'$': '0.0-0' }}
+        </p>
+      </div>
+      <div titanSubtotalFooter>
+        <p style="
+          padding-left: 3%;
+          text-align: left;
+          font: normal normal normal 17px/20px Poppins;
+          letter-spacing: 0px;
+          color: #000000;
+          opacity: 1;">
+          <strong>Rental Charges Rate</strong>
+        </p>
+
+        <div titan-subtotal-result>
+          {{ ((getInsuranceValue$ | async ) * (daysSelected$ | async)) + (subtotalCarValueDays$ | async) | currency:'KRW':'$': '0.0-0' }}
+        </div>
+      </div>
+    </titan-sub-total-card>
+    <titan-sub-total-card>
+      <titan-sub-total-card-title>Addons</titan-sub-total-card-title>
+      <h6 *ngFor="let item of ['Add-On', 'Subtotal']; last as last" titanSubtotalHeader [last]="last">
+        {{item}}
+      </h6>
+        <div *ngFor="let addon of addons$ | async" titanSubtotalBody>
+          <p>
+            {{ addon.idescription }}
+          </p>
+          <p>
+            {{ addon.isale  | currency:'KRW':'₩': '0.0-0' }}
+          </p>
+        </div>
+      <div titanSubtotalFooter>
+        <p style="
+          padding-left: 3%;
+          text-align: left;
+          font: normal normal normal 17px/20px Poppins;
+          letter-spacing: 0px;
+          color: #000000;
+          opacity: 1;">
+          <strong>Subtotal</strong>
+        </p>
+        <div titan-subtotal-result>
+           {{ (addonsSubtotal$ | async) | currency:'KRW':'₩': '0.0-0' }}
+        </div>
+      </div>
+    </titan-sub-total-card>
+
+    <div class="container-checkout__card-details__final-value">
+      <span>Estimated total:</span>
+      <strong>{{ sumValues$ | async | currency: 'KRW': '₩': '0.0-0' }}</strong>
+    </div>
+  </div>
+  <form class="container-checkout__form" [formGroup]="form">
+    <label for="fullname">Full name <span>*</span></label>
+    <div class="container-checkout__form__names">
+      <input fieldSize="large" placeholder="Full name" formControlName="fullName" type="text" nbInput>
+    </div>
+    <label for="koreanLicence">Korean or USFK licence number <span>*</span></label>
+    <div class="container-checkout__form__id">
+      <input fieldSize="large" placeholder="Korean or USFK licence number"
+             formControlName="koreanLicence" type="text"
+             nbInput>
+    </div>
+    <label for="expirationDate">International driving permit (IDP) number <span>*</span></label>
+    <input fieldSize="large" placeholder="International driving permit (IDP) number"
+           formControlName="internationalDriving"
+           type="text" nbInput>
+    <label for="expirationDate">Expiration date <span>*</span></label>
+    <div class="container-checkout__form__id">
+      <input fieldSize="large" nbInput placeholder="Date of birth" formControlName="expirationDate"
+             [nbDatepicker]="dateTimePicker" style="margin-bottom: -20px;">
+      <nb-datepicker format="DD-MM-YYYY" #dateTimePicker></nb-datepicker>
+    </div>
+    <label for="country">Country <span>*</span></label>
+    <nb-select shape="semi-round" size="large" formControlName="country">
+      <nb-option value="">Select...</nb-option>
+      <nb-option *ngFor="let country of countries$ | async" [value]="country.cocode">
+        {{ country.cdescription }}
+      </nb-option>
+    </nb-select>
+    <label for="passportOrKoreanCard">Passport /Korean ARC card <span>*</span></label>
+    <input fieldSize="large" placeholder="Passport /Korean ARC card"
+           formControlName="passportOrKoreanCard" type="text"
+           nbInput>
+    <label for="permanentResident">Permanent resident card number number (OPTIONAL)</label>
+    <input fieldSize="large"
+          placeholder="Permanent resident card number number"
+          formControlName="permanentResident" type="text" nbInput>
+    <label for="hotel">Hotel name or Korean Home address/Hotel address <span>*</span></label>
+    <div class="container-checkout__form__address">
+      <input fieldSize="large" placeholder="Hotel name" formControlName="hotel" type="text" nbInput>
+    </div>
+    <label for="dateOfBirth">Date of birth <span>*</span></label>
+    <input fieldSize="large" nbInput placeholder="Date of birth" formControlName="dateOfBirth"
+           [nbDatepicker]="dateTimePicker" style="margin-bottom: -20px;">
+    <nb-datepicker format="DD-MM-YYYY" #dateTimePicker></nb-datepicker>
+    <label for="Phone">Phone (WhatsApp)<span>*</span></label>
+    <div class="container-checkout__form__contact">
+      <input fieldSize="large" placeholder="Phone (WhatsApp)" formControlName="phoneWhatsApp" type="number" nbInput>
+    </div>
+    <label for="dateOfBirth">Account username<span>*</span></label>
+    <input fieldSize="large" placeholder="Account username" formControlName="username" type="text" nbInput>
+    <label for="dateOfBirth">account password or Create account password<span>*</span></label>
+    <input fieldSize="large" placeholder="Create account password" formControlName="accountPassword" type="password"
+           nbInput>
+    <nb-radio-group formControlName="payment">
+      <nb-radio value="1" >
+        <nb-card>
+          <nb-card-header>
+            Direct bank transfer - Korean bank only
+          </nb-card-header>
+          <nb-card-body>
+            <i>This option is for customers that cannot make payments via Paypal Checkout.
+              <br>Make your payment directly into our bank account.
+              <br>Please use your Order ID as the payment reference. Your car will not be booked until the funds have
+              cleared in our account.</i>
+          </nb-card-body>
+        </nb-card>
+      </nb-radio>
+      <nb-radio value="2">
+        <nb-card>
+          <nb-card-header>
+            Pay with credit card
+            <img src="assets/logos/PayPal.svg" alt="PayPal" class="initial">
+            <img src="assets/logos/PayPal_CREDIT.svg" alt="PayPal">
+            <img src="assets/logos/mastercard.svg" alt="MasterCard">
+            <img src="assets/logos/VISA.svg" alt="Visa">
+            <img src="assets/logos/Discover@2x.png" alt="Discover">
+            <img src="assets/logos/AMERICAN.svg" alt="American">
+          </nb-card-header>
+          <nb-card-body>
+            <i>Pay with credit cardSecure payment by credit card via PayPal, PayPal does not accept payments using
+              Korean credit and debit/bank cards.<br> Please use Direct Bank Transfer option.</i>
+          </nb-card-body>
+        </nb-card>
+      </nb-radio>
+      <nb-radio value="3">
+        <nb-card>
+          <nb-card-header>
+            Pay with Smartro
+          </nb-card-header>
+          <nb-card-body>
+            <i>Pay with <img src="assets/logos/SMARTRO.svg" alt="American"></i>
+          </nb-card-body>
+        </nb-card>
+      </nb-radio>
+    </nb-radio-group>
+    <p>
+      Your personal data will be used to process your order, support your experience throughout this website,
+      an for other purposes described in your <span style="color: #E54300">privacy policy.</span>
+    </p>
+    <nb-checkbox formControlName="conditions">
+      <span>I have read and agree to the website terms and conditions</span>
+    </nb-checkbox>
+    <button [disabled]="form.invalid" *ngIf="form.get('payment').value !== '2'" nbButton appearance="outline">
+      Place order
+    </button>
+    <titan-paypal-btn [btnVisible]="form.get('payment').value === '2' && !form.invalid"
+                      [description]="'Test transaction'"
+                      [formValue]="form.value"
+                      [price]="sumValues$ | async">
+    </titan-paypal-btn>
+  </form>
+</div>
+<img class="ilustration" src="assets/Ilustracion_checkout.svg" alt="American">

@@ -1,0 +1,112 @@
+<div class="home-container">
+  <img class="home-line1" src="../../../assets/logos/line.png" alt="line">
+  <img class="home-line2" src="../../../assets/logos/line.png" alt="line">
+  <div class="home-title">
+    <span class="subtitle">Tamra Rent a car | Jeju island's leading Car Rental Agency</span>
+    <h1>Book the right car for your Jeju Island trip and more.</h1>
+  </div>
+  <div class="home-container-search-bar">
+    <titan-search-bar></titan-search-bar>
+  </div>
+</div>
+<div class="home-benefits-container">
+  <titan-benefits></titan-benefits>
+</div>
+
+<div class="carousel-container">
+  <div class="carousel-header">
+    <p>Browse by category</p>
+  </div>
+
+  <div class="category-carousel-container">
+    <swiper *ngIf="byCategoryData.length" class="swiper-container"
+            [grabCursor]= "true"
+            [loop]="true"
+            [navigation]="true"
+            [autoHeight]="true"
+            [slidesPerView]= "1"
+            [breakpoints]="{
+                        '1100': {
+                          slidesPerView: 4
+                         },
+                        '768': {
+                          slidesPerView: 3
+                        }
+                    }">
+      <div class="swiper-wrapper timeline">
+        <ng-template swiperSlide *ngFor="let category of byCategoryData">
+          <div class="swiper-content" (click)="goToProductDetails(category.tdescription)">
+            <div class="category-container">
+              <div class="divisor">
+                <img alt="divisor" src="../../../../assets/icons/divisor.png">
+              </div>
+              <div class="category-img">
+                <img alt="category" src="{{category.imageSrc}}">
+              </div>
+              <p>{{category.tdescription}}</p>
+            </div>
+          </div>
+        </ng-template>
+      </div>
+    </swiper>
+  </div>
+</div>
+
+<div class="carousel-container">
+  <div class="carousel-header">
+    <p>POPULAR VEHICLES</p>
+  </div>
+
+  <div class="category-carousel-container popular-carousel-container">
+    <swiper *ngIf="byPopularityData.length" class="swiper-container"
+            [grabCursor]= "true"
+            [loop]="true"
+            [navigation]="true"
+            [autoHeight]="true"
+            [slidesPerView]= "1"
+            [breakpoints]="{
+                        '1100': {
+                          slidesPerView: 3
+                         },
+                         '768': {
+                          slidesPerView: 2
+                         }
+                    }">
+      <div class="swiper-wrapper timeline">
+        <ng-template swiperSlide *ngFor="let category of byPopularityData">
+          <div class="swiper-content">
+            <div class="category-container popular-container">
+              <div class="category-img">
+                <img alt="category" src="{{category.imageSrc}}">
+              </div>
+              <p>{{category.idescription}}</p>
+              <p>{{category.tdescription}}</p>
+              <div class="car-info">
+                <div>
+                  <img alt="diesel" src="../../../assets/icons/diesel-icon.png">
+                  <span>{{category.cfuel}}</span>
+                </div>
+                <div>
+                  <img alt="diesel" src="../../../assets/icons/seats-icon.png">
+                  <span>{{category.cseats}} Seats</span>
+                </div>
+                <div>
+                  <img alt="diesel" src="../../../assets/icons/bags-icon.png">
+                  <span>{{category.luggage}} Bags</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </div>
+    </swiper>
+  </div>
+</div>
+
+<div class="divisor">
+  <img alt="divisor" src="../../../../assets/icons/divisor.png">
+</div>
+
+<div class="top-destinations-container">
+  <titan-top-destinations></titan-top-destinations>
+</div>

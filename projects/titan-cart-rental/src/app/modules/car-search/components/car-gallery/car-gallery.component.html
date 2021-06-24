@@ -1,0 +1,16 @@
+<div #divElement class="about-carousel-container">
+  <div titan-carousel
+       [items]="servImage"
+       [width]="divElement.clientWidth"
+       [$item]="itemTemplate">
+  </div>
+
+  <ng-template let-thumbnail #itemTemplate>
+        <img style="
+        width: 433px;
+        height: 325px;
+        display:block;
+        margin:auto;
+        object-fit: cover;"  [alt]="thumbnail" [src]="thumbnail">
+  </ng-template>
+</div>

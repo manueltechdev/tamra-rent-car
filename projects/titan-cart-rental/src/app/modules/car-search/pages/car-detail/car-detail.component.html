@@ -1,0 +1,65 @@
+<nb-card>
+  <nb-card-body>
+    <div class="container-car-detail">
+      <div class="container-car-detail__price">
+<!--        <h4>-->
+<!--          {{ (currency === 'USD' ? convertString((carInfo$ | async).isale[1]) : convertString((carInfo$ | async).isale[0])) | currency:currency}}-->
+<!--&lt;!&ndash;          {{ (carInfo$ | async).isale | currency:(carInfo$ | async).icurrency:'₩' }}&ndash;&gt;-->
+<!--          <span>/ Day</span>-->
+<!--        </h4>-->
+        <titan-car-gallery [image]="(carInfo$ | async)?.image"></titan-car-gallery>
+        <h3>{{ (carInfo$ | async).idescription }}</h3>
+        <titan-search-bar [carsSearchDetail]="true">
+        </titan-search-bar>
+        <div class="container-car-detail__policy_container">
+          <span>CANCELLATION POLICY</span>
+        </div>
+        <div class="container-car-detail__policy_text">
+          <img src="assets/icons/icon_policy_cancellation.svg" style="width: 30px;height: 33px;">
+          <p style="margin-left:1%"> See our Insurance policy <a href="">here</a></p>
+        </div>
+      </div>
+      <div class="container-car-detail__badges-description">
+        <div>
+            <div class="container-car-detail__badges-container" *ngFor="let badge of (carInfo$ | async).features">
+                <img [src]="urlImage + badge[1]" class="feature_image" alt="">
+                <p class="feature_text"><b>{{badge[0]}}</b><p>
+            </div>
+        </div>
+        <div class="container-car-detail__description-container">
+          <hr style="border:15px;">
+          <hr style="border:2px;">
+          <span>DESCRIPTION</span>
+          <p>{{(carInfo$ | async).ldescription}}</p>
+        </div>
+        <titan-car-detail-insurance>
+        </titan-car-detail-insurance>
+        <titan-car-detail-addons class="container-car-detail__addons">
+        </titan-car-detail-addons>
+        <div class="container-car-detail__total-list">
+          <span>YOUR CART</span>
+          <nb-list>
+<!--            <nb-list-item class="space-between" *ngFor="let item of actives$ | async">-->
+<!--              <p><img alt="addon thumbnail" [src]="item.image"> {{ item.idescription }}</p>-->
+<!--                <strong>{{ item.isale | currency: 'KRW':'₩' }}</strong>-->
+<!--            </nb-list-item>-->
+            <nb-list-item *ngIf="(getInsuranceValue$ | async)" class="space-between">
+              <p>Insurance</p>
+              <strong>{{ (getInsuranceValue$ | async) | currency: 'KRW': '₩' }}</strong>
+            </nb-list-item>
+          </nb-list>
+          <button
+            (click)="navigateToCheckout()"
+            type="submit"
+            fullWidth
+            nbButton
+            shape="rectangle"
+            status="primary">
+            Continue
+          </button>
+        </div>
+      </div>
+    </div>
+  </nb-card-body>
+</nb-card>
+

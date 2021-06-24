@@ -1,0 +1,113 @@
+.top-destinations-container {
+  margin-bottom: 1%;
+  margin-top: 160px;
+
+  .top-destinations-text {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font: normal normal 600 60px/65px Source Serif Pro;
+    letter-spacing: 0;
+    color: #E54300;
+    opacity: 1;
+  }
+
+  .top-destinations-subtext {
+    font: normal normal normal 17px/20px Poppins;
+    letter-spacing: 0;
+    color: #000000;
+    opacity: 1;
+    text-align: center;
+  }
+
+  .top-destinations {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 150px;
+
+    .destination {
+      img {
+        width: 280px;
+        height: 280px;
+      }
+
+      .destination-img {
+        border-radius: 50%;
+        margin: 60px 50px 0 50px;
+        text-align: center;
+        box-shadow: 3px 3px 10px #00000029;
+        width: 303px;
+        height: 303px;
+        background: #FFFFFF 0% 0% no-repeat padding-box;
+
+          .seoul-img {
+            background-image: url("../../../../assets/images/SEOUL.png");
+          }
+
+          .jeju-img {
+            background-image: url("../../../../assets/images/JEJU.png");
+          }
+
+          .gwangju-img {
+            background-image: url("../../../../assets/images/GWANGJU.png");
+          }
+
+          .img {
+            height: 280px;
+            width: 280px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            border-radius: 50%;
+            position: relative;
+            left: 10px;
+            top: 10px;
+          }
+      }
+
+      .learn-more {
+        text-align: center;
+        font-weight: bold;
+        cursor: pointer;
+        margin-top: 40px;
+
+        p {
+          font-weight: bold;
+          font-size: 16px;
+
+          .arrow-right {
+            border: solid #E54300;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 3px;
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media all and(max-width: 768px) {
+  .top-destinations-container .top-destinations-text {
+    font-size: 40px;
+    line-height: 40px;
+  }
+
+  .top-destinations-container .top-destinations-subtext {
+    padding: 0 10px;
+  }
+
+  .top-destinations-container .top-destinations .destination .destination-img {
+    height: 223px;
+    width: 223px;
+  }
+
+  .top-destinations-container .top-destinations .destination .destination-img .img {
+    height: 200px;
+    width: 200px;
+  }
+}

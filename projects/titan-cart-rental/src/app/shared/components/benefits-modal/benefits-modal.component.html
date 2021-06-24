@@ -1,0 +1,11 @@
+<nb-card class="benefits-modal">
+    <img (click)="closeDialog()" class="close-dialog" src="../../../../assets/icons/close-modal.png">
+    <nb-card-body>
+        <img class="modal-image" src="{{benefit.benefitsImgAPI}}">
+        <div class="content">
+            <h3>{{benefit.title}}</h3>
+            <p>{{benefit.text}}</p>
+        </div>
+    </nb-card-body>
+    <img class="divisor" alt="divisor" src="../../../../assets/icons/divisor.png">
+</nb-card>

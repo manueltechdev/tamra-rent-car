@@ -1,0 +1,43 @@
+<nb-card class="sign-up-modal">
+  <img (click)="closeDialog()" class="close-dialog" src="../../../../assets/icons/close-modal.png">
+  <nb-card-body>
+    <h2 class="title">Sign up!</h2>
+    <form class="sign-up-modal__form" [formGroup]="form">
+      <div class="signup-form-field">
+        <label class="form-label">First Name <span> *</span></label>
+        <input formControlName="legalFirstName" type="text" nbInput placeholder="First Name">
+      </div>
+      <div class="signup-form-field">
+        <label class="form-label">Last Name <span> *</span></label>
+        <input formControlName="legalLastName" type="text" nbInput placeholder="Last Name">
+      </div>
+      <div class="signup-form-field">
+        <label class="form-label">Username <span> *</span></label>
+        <input formControlName="firstName" type="text" nbInput placeholder="Username">
+      </div>
+      <div class="signup-form-field">
+        <label class="form-label">Email address <span> *</span></label>
+        <input formControlName="email" type="email" nbInput placeholder="Email address">
+      </div>
+      <div class="signup-form-field">
+        <label class="form-label">Password <span> *</span></label>
+        <input formControlName="password" type="password" nbInput placeholder="Password">
+      </div>
+      <div class="signup-form-field">
+        <label class="form-label">Confirm Password <span> *</span></label>
+        <input formControlName="confirmPassword" type="password" nbInput placeholder="Confirm Password">
+      </div>
+      <nb-checkbox class="terms" formControlName="terms">
+        I agree to the terms of service and <a href="#">privacy policy.</a>
+      </nb-checkbox>
+
+      <div class="submit-button-container">
+        <div>
+          <button type="submit">Sign up <img alt="send message" src="../../../assets/icons/arrow-right.png"></button>
+        </div>
+      </div>
+    </form>
+    <p class="have-account">Already have an account? <a (click)="closeDialogAndOpenLogin()">Log in <img alt="log in" src="../../../assets/icons/arrow-right.png"></a></p>
+    <p class="signup-info">Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our <a href="#">privacy policy.</a></p>
+  </nb-card-body>
+</nb-card>

@@ -1,0 +1,38 @@
+<div class="cars-search-page-container" *ngIf="carListToShow.length">
+  <div class="titan-filters-container">
+    <titan-filers-container (applySelectedFilter)="applySelectedFilter($event)"></titan-filers-container>
+  </div>
+
+  <div class="cars-search-container">
+    <img class="points-right" src="assets/points.svg">
+    <img [ngClass]="{'points-left-position': carList.length < 12}" class="points-left" src="assets/points.svg">
+    <titan-card-car [currency]="currency" [data]="car" *ngFor="let car of carListToShow">
+    </titan-card-car>
+  </div>
+</div>
+<!--<div *ngIf="loading$ | async" class="cars-search-container" >-->
+<!--  <titan-card-car-skeleton-->
+<!--    *ngFor="let skeleton of [1, 2, 3, 4, 5, 6]" >-->
+<!--  </titan-card-car-skeleton>-->
+<!--</div>-->
+
+<div class="see-more-cars-container" *ngIf="carListToShow.length">
+  <div (click)="seeLessCars()" [ngClass]="{'see-more-cars-container-text-orange': seeLess > 1}" class="see-more-cars-container-text-less">See less</div>
+  <div (click)="seeLessCars()" [ngClass]="{'see-more-cars-container-text-orange': seeLess > 1}" class="see-more-cars-container-text-less see-more-cars-container-text-less-icon">
+    <div><i class="fa fa-chevron-left"></i></div>
+    <div>{{seeLess}}</div>
+  </div>
+
+  <div [ngClass]="{'see-more-cars-container-text-orange': (carList.length > 12 && carListToShow.length < carList.length)}" (click)="seeMoreCars()" class="see-more-cars-container-text-more see-more-cars-container-text-more-icon">
+    <div><i class="fa fa-chevron-right"></i></div>
+    <div>{{seeMore}}</div>
+  </div>
+
+  <div [ngClass]="{'see-more-cars-container-text-orange': (carList.length > 12 && carListToShow.length < carList.length)}" (click)="seeMoreCars()" class="see-more-cars-container-text-more">See more</div>
+</div>
+
+<div class="car-list-no-results" *ngIf="carList && !carList.length">
+  <h1>Sorry, no results found.</h1>
+  <p>Try different dates</p>
+</div>
+

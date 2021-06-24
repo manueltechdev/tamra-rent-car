@@ -1,0 +1,14 @@
+<nb-layout>
+  <nb-layout-header class="header" [ngClass]="{'background-transparent': !(isHeaderWhite$ | async)}" fixed>
+    <titan-header>
+      <ng-container #viewContainer></ng-container>
+    </titan-header>
+  </nb-layout-header>
+  <nb-layout-column>
+      <router-outlet></router-outlet>
+  </nb-layout-column>
+  <nb-layout-footer>
+    <titan-footer style="width: 100%"></titan-footer>
+  </nb-layout-footer>
+</nb-layout>
+

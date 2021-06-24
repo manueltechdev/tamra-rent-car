@@ -1,0 +1,27 @@
+<nb-card class="login-modal">
+  <img (click)="closeDialog()" class="close-dialog" src="../../../../assets/icons/close-modal.png">
+  <nb-card-body>
+    <h2 class="title">Welcome back</h2>
+    <form class="login-modal__form" [formGroup]="form">
+      <div class="login-form-field">
+        <label class="form-label">Login <span> *</span></label>
+        <input formControlName="email" type="email" nbInput placeholder="Username or email address">
+      </div>
+      <div class="login-form-field">
+        <label class="form-label">Password <span> *</span></label>
+        <input formControlName="password" autocomplete="current-password" type="password" nbInput placeholder="Password">
+      </div>
+
+      <p class="forgot-password">Forgot your password?</p>
+
+      <div class="submit-button-container">
+        <div>
+          <button type="submit">Log in <img alt="send message" src="../../../assets/icons/arrow-right.png"></button>
+        </div>
+      </div>
+    </form>
+
+    <titan-open-modal-middleman [isLogin]="true"></titan-open-modal-middleman>
+    <p class="signup-info">Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our <a href="#">privacy policy.</a></p>
+  </nb-card-body>
+</nb-card>

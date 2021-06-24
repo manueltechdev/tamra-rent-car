@@ -1,0 +1,129 @@
+@import "../../../../../themes";
+
+nb-card{
+  width: 528px;
+  height: 100%;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  box-shadow: 3px 4px 12px #00000029;
+  border-radius: 25px;
+  opacity: 1;
+  position: relative;
+}
+
+.feature-container {
+  display: flex;
+  align-items: center;
+}
+
+
+.card-car-container {
+  display: flex;
+  flex-direction: column;
+  &__show{
+    height: 237px;
+    border: 1px solid #D5D5D5;
+    border-radius: 20px;
+    opacity: 1;
+  }
+  &__image {
+    width: 300px;
+    height: 223px;
+    display:block;
+    margin:auto;
+  }
+  &__title {
+    margin-top:0px;
+    text-align: center;
+    font: normal normal 600 20px/95px Poppins;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+  }
+
+  &__subtitle {
+    margin-top: -40px;
+    text-align: center;
+    font: normal normal 200 15px Poppins;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+  }
+  &__units {
+   color: $color-000000;
+  }
+
+  &__badges {
+    height: 45px;
+    margin-right: 20px;
+    border-radius: 25px 25px 0px 0px;
+    opacity: 1;
+  }
+
+  &__feature {
+    width: 21px;
+    height: 20px;
+    display: block;
+    opacity: 1;
+    margin-right: 5px;
+  }
+
+  &__badge {
+    text-align: center;
+    font: normal normal 500 16px Poppins;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+    margin: 0;
+  }
+}
+
+.card-footer {
+  display: flex;
+  font-weight: 700;
+  font-size: 1.3rem;
+  align-items: center;
+  position: absolute;
+  bottom: 10px;
+  justify-content: space-between;
+  left: 50%;
+  width: 100%;
+  padding: 0 24px;
+  transform: translate(-50%, 0);
+}
+nb-layout .layout{
+  background-color: white !important;
+}
+
+@media all and (max-width: 1500px) {
+  .card-car-container {
+    &__image {
+      width: 280px;
+      height: auto;
+    }
+
+    &__title {
+      font: normal normal 600 18px/65px Poppins;
+    }
+
+    &__badge {
+      font: normal normal 500 14px Poppins;
+    }
+
+    &__subtitle {
+      margin-top: -20px;
+    }
+  }
+}
+
+@media all and (max-width: 540px) {
+  .card-car-container {
+    &__image {
+      width: 240px;
+      height: auto;
+    }
+
+    &__badge {
+      font: normal normal 500 10px Poppins;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+<button nbButton
+        (click)="openDialog()"
+        size="large"
+        class="container-filter-btn">
+  <nb-badge
+    *ngIf="getChecked && getChecked.length > 0 && !filter?.priceRangeSelected"
+    [text]="getChecked.length"
+    status="danger"
+    position="top left">
+  </nb-badge>
+  <nb-badge
+    *ngIf="filter?.priceRangeSelected"
+    [text]="'$'+filter.priceRangeSelected[0].value + ' - $' + filter.priceRangeSelected[1].value "
+    status="danger"
+    class="container-filter-btn__badge"
+    position="top start">
+  </nb-badge>
+<!--  <span class="filter-text">{{ filter.name }}</span>-->
+</button>
+
+

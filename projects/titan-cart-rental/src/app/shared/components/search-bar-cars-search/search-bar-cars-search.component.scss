@@ -1,0 +1,18 @@
+.search-bar-cars-search-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  nb-select{
+    height: 50px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 2px 7px 10px #00000029;
+    border-radius: 200px;
+    opacity: 1;
+  }
+  mat-form-field {
+    background: #FFFFFF 0% 0% no-repeat padding-box !important;
+    box-shadow: 2px 7px 10px #00000029 !important;
+    border-radius: 71px !important;
+    opacity: 1 !important;
+  }
+}

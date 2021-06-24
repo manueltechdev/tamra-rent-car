@@ -1,0 +1,387 @@
+<div class="container-filters-container">
+<!--  <titan-btn-filter-->
+<!--    [filter]="filter"-->
+<!--    *ngFor="let filter of filters">-->
+<!--  </titan-btn-filter>-->
+<!--  <button nbButton class="btn-filter" status="danger">-->
+<!--    <nb-icon icon="funnel-outline"></nb-icon>-->
+<!--    Clear filters-->
+<!--  </button>-->
+
+  <div class="checkbox-filter">
+    <div class="filter" [ngClass]="{'active': sortByFilter.isAppliedFilter}" (click)="openFilter('sortByFilter')">
+      <div class="filter-button">
+        <img alt="icon" src="../../../../../assets/icons/sort-by.png">
+        <span>Sort By</span>
+      </div>
+    </div>
+
+    <div [ngClass]="{'active-filter': sortByFilter.show}" class="filter-select" id="sort-by-filter">
+      <div (click)="closeFilter('sortByFilter')" class="close-filter-icon"><img alt="icon" src="../../../../../assets/icons/Cerrar.png"></div>
+
+      <div class="checkbox">
+        <nb-checkbox [checked]="sortByFilter.checked == 'relevance'" (change)="sortByFilter.checked = 'relevance'">Relevance</nb-checkbox>
+      </div>
+      <div class="checkbox">
+        <nb-checkbox [checked]="sortByFilter.checked == 'priceLow'" (change)="sortByFilter.checked = 'priceLow'">Price: low to high</nb-checkbox>
+      </div>
+      <div class="checkbox">
+        <nb-checkbox [checked]="sortByFilter.checked == 'priceHigh'" (change)="sortByFilter.checked = 'priceHigh'">Price: high to low</nb-checkbox>
+      </div>
+
+      <div (click)="applyFilter('sortByFilter')" class="apply-filter-button">Apply <img alt="icon" src="../../../../../assets/icons/arrow-right.png"></div>
+    </div>
+  </div>
+
+  <div class="checkbox-filter">
+    <div class="filter" [ngClass]="{'active': currencyFilter.isAppliedFilter}" (click)="openFilter('currencyFilter')">
+      <div class="filter-button">
+        <img alt="icon" src="../../../../../assets/icons/price.png">
+        <span>Currency</span>
+      </div>
+    </div>
+
+    <div [ngClass]="{'active-filter': currencyFilter.show}" class="filter-select" id="currency-filter">
+      <div (click)="closeFilter('currencyFilter')" class="close-filter-icon"><img alt="icon" src="../../../../../assets/icons/Cerrar.png"></div>
+
+      <div class="checkbox">
+        <nb-checkbox [checked]="currencyFilter.checked == 'KRW'" (change)="currencyFilter.checked = 'KRW'">KRW</nb-checkbox>
+      </div>
+      <div class="checkbox">
+        <nb-checkbox [checked]="currencyFilter.checked == 'USD'" (change)="currencyFilter.checked = 'USD'">USD</nb-checkbox>
+      </div>
+
+      <div (click)="applyFilter('currencyFilter')" class="apply-filter-button">Apply <img alt="icon" src="../../../../../assets/icons/arrow-right.png"></div>
+    </div>
+  </div>
+
+  <div class="checkbox-filter">
+    <div class="filter" [ngClass]="{'active': priceFilter.isAppliedFilter}"  (click)="openFilter('priceFilter')">
+      <div class="filter-button">
+        <img alt="icon" src="../../../../../assets/icons/price.png">
+        <span>Price</span>
+      </div>
+    </div>
+
+      <div [ngClass]="{'active-filter': priceFilter.show}" class="filter-select" id="price-filter">
+        <div (click)="closeFilter('priceFilter')" class="close-filter-icon"><img alt="icon" src="../../../../../assets/icons/Cerrar.png"></div>
+
+        <p>
+          <span>{{priceMin}}</span>
+          <span> - </span>
+          <span>{{priceMax}}</span>
+        </p>
+
+        <div class="price-slider">
+          <input type="range" id="price-slider" class="slider" step="1" min="1" max="25" value="3" (input)="updateTextInput($event)">
+        </div>
+
+        <div (click)="applyFilter('priceFilter')" class="apply-filter-button">Apply <img alt="icon" src="../../../../../assets/icons/arrow-right.png"></div>
+      </div>
+  </div>
+
+  <div class="checkbox-filter">
+    <div class="filter" [ngClass]="{'active': seatsNumberFilter.isAppliedFilter}"  (click)="openFilter('seatsNumberFilter')">
+      <div class="filter-button">
+        <img alt="icon" src="../../../../../assets/icons/seats.png">
+        <span>Number of seats</span>
+      </div>
+    </div>
+
+    <div [ngClass]="{'active-filter': seatsNumberFilter.show}" class="filter-select" id="seats-filter">
+      <div (click)="closeFilter('seatsNumberFilter')" class="close-filter-icon"><img alt="icon" src="../../../../../assets/icons/Cerrar.png"></div>
+
+      <div class="checkbox">
+        <nb-checkbox [checked]="seatsNumberFilter.checked == '4'" (change)="seatsNumberFilter.checked = '4'">4 or more</nb-checkbox>
+      </div>
+      <div class="checkbox">
+        <nb-checkbox [checked]="seatsNumberFilter.checked == '5'" (change)="seatsNumberFilter.checked = '5'">5 or more</nb-checkbox>
+      </div>
+      <div class="checkbox">
+        <nb-checkbox [checked]="seatsNumberFilter.checked == '6'" (change)="seatsNumberFilter.checked = '6'">6 or more</nb-checkbox>
+      </div>
+      <div class="checkbox">
+        <nb-checkbox [checked]="seatsNumberFilter.checked == '7'" (change)="seatsNumberFilter.checked = '7'">7 or more</nb-checkbox>
+      </div>
+      <div class="checkbox">
+        <nb-checkbox [checked]="seatsNumberFilter.checked == '8'" (change)="seatsNumberFilter.checked = '8'">8 or more</nb-checkbox>
+      </div>
+
+      <div (click)="applyFilter('seatsNumberFilter')" class="apply-filter-button">Apply <img alt="icon" src="../../../../../assets/icons/arrow-right.png"></div>
+    </div>
+
+
+  </div>
+
+  <div class="checkbox-filter">
+    <div class="filter" [ngClass]="{'active': fuelFilter.isAppliedFilter}"  (click)="openFilter('fuelFilter')">
+      <div class="filter-button">
+        <img alt="icon" src="../../../../../assets/icons/diesel.png">
+        <span>Fuel type</span>
+      </div>
+    </div>
+
+    <div [ngClass]="{'active-filter': fuelFilter.show}" class="filter-select" id="fuel-filter">
+      <div (click)="closeFilter('fuelFilter')" class="close-filter-icon"><img alt="icon" src="../../../../../assets/icons/Cerrar.png"></div>
+
+      <div class="checkbox">
+        <nb-checkbox [checked]="fuelFilter.checked == 'Gasoline'" (change)="fuelFilter.checked = 'Gasoline'">Gasoline</nb-checkbox>
+      </div>
+      <div class="checkbox">
+        <nb-checkbox [checked]="fuelFilter.checked == 'LPG'" (change)="fuelFilter.checked = 'LPG'">LPG</nb-checkbox>
+      </div>
+      <div class="checkbox">
+        <nb-checkbox [checked]="fuelFilter.checked == 'Diesel'" (change)="fuelFilter.checked = 'Diesel'">Diesel</nb-checkbox>
+      </div>
+      <div class="checkbox">
+        <nb-checkbox [checked]="fuelFilter.checked == 'Electric'" (change)="fuelFilter.checked = 'Electric'">Electric</nb-checkbox>
+      </div>
+
+      <div (click)="applyFilter('fuelFilter')" class="apply-filter-button">Apply <img alt="icon" src="../../../../../assets/icons/arrow-right.png"></div>
+    </div>
+
+  </div>
+
+  <div class="checkbox-filter">
+    <div class="filter" [ngClass]="{'active': vehicleTypeFilter.isAppliedFilter}"  (click)="openFilter('vehicleTypeFilter')">
+      <div class="filter-button">
+        <img alt="icon" src="../../../../../assets/icons/vehicle-type.png">
+        <span>Vehicle type</span>
+      </div>
+    </div>
+
+    <div [ngClass]="{'active-filter': vehicleTypeFilter.show}" class="filter-select" id="vehicle-type-filter">
+      <div (click)="closeFilter('vehicleTypeFilter')" class="close-filter-icon"><img alt="icon" src="../../../../../assets/icons/Cerrar.png"></div>
+
+      <div class="checkbox">
+        <nb-checkbox [checked]="vehicleTypeFilter.checked == 'Vans'" (change)="vehicleTypeFilter.checked = 'Vans'">Vans</nb-checkbox>
+      </div>
+      <div class="checkbox">
+        <nb-checkbox [checked]="vehicleTypeFilter.checked == 'Luxury'" (change)="vehicleTypeFilter.checked = 'Luxury'">Luxury</nb-checkbox>
+      </div>
+      <div class="checkbox">
+        <nb-checkbox [checked]="vehicleTypeFilter.checked == 'Convertibles'" (change)="vehicleTypeFilter.checked = 'Convertibles'">Convertibles</nb-checkbox>
+      </div>
+      <div class="checkbox">
+        <nb-checkbox [checked]="vehicleTypeFilter.checked == 'Premium standard'" (change)="vehicleTypeFilter.checked = 'Premium standard'">Premium standard</nb-checkbox>
+      </div>
+      <div class="checkbox">
+        <nb-checkbox [checked]="vehicleTypeFilter.checked == 'SUVs'" (change)="vehicleTypeFilter.checked = 'SUVs'">SUVs</nb-checkbox>
+      </div>
+      <div class="checkbox">
+        <nb-checkbox [checked]="vehicleTypeFilter.checked == 'Midsize SUVs'" (change)="vehicleTypeFilter.checked = 'Midsize SUVs'">Midsize SUVs</nb-checkbox>
+      </div>
+      <div class="checkbox">
+        <nb-checkbox [checked]="vehicleTypeFilter.checked == 'Electric'" (change)="vehicleTypeFilter.checked = 'Electric'">Electric</nb-checkbox>
+      </div>
+      <div class="checkbox">
+        <nb-checkbox [checked]="vehicleTypeFilter.checked == 'Medium Compact'" (change)="vehicleTypeFilter.checked = 'Medium Compact'">Medium Compact</nb-checkbox>
+      </div>
+      <div class="checkbox">
+        <nb-checkbox [checked]="vehicleTypeFilter.checked == 'Compact'" (change)="vehicleTypeFilter.checked = 'Compact'">Compact</nb-checkbox>
+      </div>
+      <div class="checkbox">
+        <nb-checkbox [checked]="vehicleTypeFilter.checked == 'Standard'" (change)="vehicleTypeFilter.checked = 'Standard'">Standard</nb-checkbox>
+      </div>
+      <div class="checkbox">
+        <nb-checkbox [checked]="vehicleTypeFilter.checked == 'Minibus'" (change)="vehicleTypeFilter.checked = 'Minibus'">Minibus</nb-checkbox>
+      </div>
+
+      <div (click)="applyFilter('vehicleTypeFilter')" class="apply-filter-button">Apply <img alt="icon" src="../../../../../assets/icons/arrow-right.png"></div>
+    </div>
+
+  </div>
+
+  <div class="checkbox-filter">
+    <div class="filter" [ngClass]="{'active': vehicleMakesFilter.isAppliedFilter}"  (click)="openFilter('vehicleMakesFilter')">
+      <div class="filter-button">
+        <img alt="icon" src="../../../../../assets/icons/vehicle-make.png">
+        <span>Vehicle makes</span>
+      </div>
+    </div>
+
+    <div [ngClass]="{'active-filter': vehicleMakesFilter.show}" class="filter-select" id="vehicle-makes-filter">
+      <div (click)="closeFilter('vehicleMakesFilter')" class="close-filter-icon"><img alt="icon" src="../../../../../assets/icons/Cerrar.png"></div>
+
+      <div class="checkbox">
+        <nb-checkbox [checked]="vehicleMakesFilter.checked == 'Tesla'" (change)="vehicleMakesFilter.checked = 'Tesla'">Tesla</nb-checkbox>
+      </div>
+      <div class="checkbox">
+        <nb-checkbox [checked]="vehicleMakesFilter.checked == 'BMW'" (change)="vehicleMakesFilter.checked = 'BMW'">BMW</nb-checkbox>
+      </div>
+      <div class="checkbox">
+        <nb-checkbox [checked]="vehicleMakesFilter.checked == 'JEEP'" (change)="vehicleMakesFilter.checked = 'JEEP'">JEEP</nb-checkbox>
+      </div>
+      <div class="checkbox">
+        <nb-checkbox [checked]="vehicleMakesFilter.checked == 'Citroen'" (change)="vehicleMakesFilter.checked = 'Citroen'">Citroen</nb-checkbox>
+      </div>
+      <div class="checkbox">
+        <nb-checkbox [checked]="vehicleMakesFilter.checked == 'KIA'" (change)="vehicleMakesFilter.checked = 'KIA'">KIA</nb-checkbox>
+      </div>
+      <div class="checkbox">
+        <nb-checkbox [checked]="vehicleMakesFilter.checked == 'Huyndai'" (change)="vehicleMakesFilter.checked = 'Huyndai'">Huyndai</nb-checkbox>
+      </div>
+      <div class="checkbox">
+        <nb-checkbox [checked]="vehicleMakesFilter.checked == 'Genesis'" (change)="vehicleMakesFilter.checked = 'Genesis'">Genesis</nb-checkbox>
+      </div>
+      <div class="checkbox">
+        <nb-checkbox [checked]="vehicleMakesFilter.checked == 'Chevrolet'" (change)="vehicleMakesFilter.checked = 'Chevrolet'">Chevrolet</nb-checkbox>
+      </div>
+      <div class="checkbox">
+        <nb-checkbox [checked]="vehicleMakesFilter.checked == 'Ssangyong'" (change)="vehicleMakesFilter.checked = 'Ssangyong'">Ssangyong</nb-checkbox>
+      </div>
+
+      <div (click)="applyFilter('fuelFilter')" class="apply-filter-button">Apply <img alt="icon" src="../../../../../assets/icons/arrow-right.png"></div>
+    </div>
+
+  </div>
+
+  <div class="checkbox-filter">
+    <div class="filter" [ngClass]="{'active': gpsTypeFilter.isAppliedFilter}"  (click)="openFilter('gpsTypeFilter')">
+      <div class="filter-button">
+        <img alt="icon" src="../../../../../assets/icons/gps.png">
+        <span>GPS type</span>
+      </div>
+    </div>
+
+    <div [ngClass]="{'active-filter': gpsTypeFilter.show}" class="filter-select" id="gps-type-filter">
+      <div (click)="closeFilter('gpsTypeFilter')" class="close-filter-icon"><img alt="icon" src="../../../../../assets/icons/Cerrar.png"></div>
+
+      <div class="checkbox">
+        <nb-checkbox [checked]="gpsTypeFilter.checked == 'Internal GPS'" (change)="gpsTypeFilter.checked = 'Internal GPS'">Internal GPS</nb-checkbox>
+      </div>
+      <div class="checkbox">
+        <nb-checkbox [checked]="gpsTypeFilter.checked == 'Naver Maps'" (change)="gpsTypeFilter.checked = 'Naver Maps'">Naver Maps</nb-checkbox>
+      </div>
+
+      <div (click)="applyFilter('gpsTypeFilter')" class="apply-filter-button">Apply <img alt="icon" src="../../../../../assets/icons/arrow-right.png"></div>
+    </div>
+  </div>
+
+  <div class="checkbox-filter">
+    <div class="filter" [ngClass]="{'active': gpsLanguageFilter.isAppliedFilter}"  (click)="openFilter('gpsLanguageFilter')">
+      <div class="filter-button">
+        <img alt="icon" src="../../../../../assets/icons/gps.png">
+        <span>GPS language</span>
+      </div>
+    </div>
+
+    <div [ngClass]="{'active-filter': gpsLanguageFilter.show}" class="filter-select" id="gps-language-filter">
+      <div (click)="closeFilter('gpsLanguageFilter')" class="close-filter-icon"><img alt="icon" src="../../../../../assets/icons/Cerrar.png"></div>
+
+      <div class="checkbox">
+        <nb-checkbox [checked]="gpsLanguageFilter.checked == 'English or Korean'" (change)="gpsLanguageFilter.checked = 'English or Korean'">English or Korean</nb-checkbox>
+      </div>
+      <div class="checkbox">
+        <nb-checkbox [checked]="gpsLanguageFilter.checked == 'Chinese, Japanese'" (change)="gpsLanguageFilter.checked = 'Chinese, Japanese'">English, Korea,<br> Chinese, Japanese</nb-checkbox>
+      </div>
+
+      <div (click)="applyFilter('gpsLanguageFilter')" class="apply-filter-button">Apply <img alt="icon" src="../../../../../assets/icons/arrow-right.png"></div>
+    </div>
+  </div>
+
+  <div class="checkbox-filter">
+    <div class="filter" [ngClass]="{'active': ageRestrictionFilter.isAppliedFilter}"  (click)="openFilter('ageRestrictionFilter')">
+      <div class="filter-button">
+        <img alt="icon" src="../../../../../assets/icons/age-restriction.png">
+        <span>Age restriction</span>
+      </div>
+    </div>
+
+    <div [ngClass]="{'active-filter': ageRestrictionFilter.show}" class="filter-select" id="age-filter">
+      <div (click)="closeFilter('ageRestrictionFilter')" class="close-filter-icon"><img alt="icon" src="../../../../../assets/icons/Cerrar.png"></div>
+
+      <div class="checkbox">
+        <nb-checkbox [checked]="ageRestrictionFilter.checked == '21'" (change)="ageRestrictionFilter.checked = '21'">21 years or more</nb-checkbox>
+      </div>
+      <div class="checkbox">
+        <nb-checkbox [checked]="ageRestrictionFilter.checked == '26'" (change)="ageRestrictionFilter.checked = '26'">26 years or more</nb-checkbox>
+      </div>
+
+      <div (click)="applyFilter('ageRestrictionFilter')" class="apply-filter-button">Apply <img alt="icon" src="../../../../../assets/icons/arrow-right.png"></div>
+    </div>
+  </div>
+
+  <div class="checkbox-filter">
+    <div class="filter" [ngClass]="{'active': idpClassFilter.isAppliedFilter}"  (click)="openFilter('idpClassFilter')">
+      <div class="filter-button">
+        <img alt="icon" src="../../../../../assets/icons/idp-class.png">
+        <span>IDP class</span>
+      </div>
+    </div>
+
+    <div [ngClass]="{'active-filter': idpClassFilter.show}" class="filter-select" id="idp-filter">
+      <div (click)="closeFilter('idpClassFilter')" class="close-filter-icon"><img alt="icon" src="../../../../../assets/icons/Cerrar.png"></div>
+
+      <div class="checkbox">
+        <nb-checkbox [checked]="idpClassFilter.checked == 'A'" (change)="idpClassFilter.checked = 'A'">A class</nb-checkbox>
+      </div>
+      <div class="checkbox">
+        <nb-checkbox [checked]="idpClassFilter.checked == 'B'" (change)="idpClassFilter.checked = 'B'">B class</nb-checkbox>
+      </div>
+      <div class="checkbox">
+        <nb-checkbox [checked]="idpClassFilter.checked == 'C'" (change)="idpClassFilter.checked = 'C'">C class</nb-checkbox>
+      </div>
+      <div class="checkbox">
+        <nb-checkbox [checked]="idpClassFilter.checked == 'D'" (change)="idpClassFilter.checked = 'D'">D class</nb-checkbox>
+      </div>
+      <div class="checkbox">
+        <nb-checkbox [checked]="idpClassFilter.checked == 'E'" (change)="idpClassFilter.checked = 'E'">E class</nb-checkbox>
+      </div>
+
+
+      <div (click)="applyFilter('idpClassFilter')" class="apply-filter-button">Apply <img alt="icon" src="../../../../../assets/icons/arrow-right.png"></div>
+    </div>
+  </div>
+
+  <div class="checkbox-filter">
+    <div class="filter" [ngClass]="{'active': carFeaturesFilter.isAppliedFilter}"  (click)="openFilter('carFeaturesFilter')">
+      <div class="filter-button">
+        <img alt="icon" src="../../../../../assets/icons/usb.png">
+        <span>Car features</span>
+      </div>
+    </div>
+
+    <div [ngClass]="{'active-filter': carFeaturesFilter.show}" class="filter-select" id="car-features-filter">
+      <div (click)="closeFilter('carFeaturesFilter')" class="close-filter-icon"><img alt="icon" src="../../../../../assets/icons/Cerrar.png"></div>
+
+      <div class="checkbox">
+        <nb-checkbox [checked]="carFeaturesFilter.checked == 'Bluetooth'" (change)="carFeaturesFilter.checked = 'Bluetooth'">Bluetooth</nb-checkbox>
+      </div>
+      <div class="checkbox">
+        <nb-checkbox [checked]="carFeaturesFilter.checked == 'USB'" (change)="carFeaturesFilter.checked = 'USB'">USB</nb-checkbox>
+      </div>
+      <div class="checkbox">
+        <nb-checkbox [checked]="carFeaturesFilter.checked == 'Apple Car Play'" (change)="carFeaturesFilter.checked = 'Apple Car Play'">Apple Car Play</nb-checkbox>
+      </div>
+      <div class="checkbox">
+        <nb-checkbox [checked]="carFeaturesFilter.checked == 'Heated seats'" (change)="carFeaturesFilter.checked = 'Heated seats'">Heated seats</nb-checkbox>
+      </div>
+      <div class="checkbox">
+        <nb-checkbox [checked]="carFeaturesFilter.checked == 'Heated steering wheel'" (change)="carFeaturesFilter.checked = 'Heated steering wheel'">Heated steering wheel</nb-checkbox>
+      </div>
+      <div class="checkbox">
+        <nb-checkbox [checked]="carFeaturesFilter.checked == 'Dashboard camera'" (change)="carFeaturesFilter.checked = 'Dashboard camera'">Dashboard camera</nb-checkbox>
+      </div>
+      <div class="checkbox">
+        <nb-checkbox [checked]="carFeaturesFilter.checked == 'Backup camera'" (change)="carFeaturesFilter.checked = 'Backup camera'">Backup camera</nb-checkbox>
+      </div>
+      <div class="checkbox">
+        <nb-checkbox [checked]="carFeaturesFilter.checked == 'Electric side mirrors'" (change)="carFeaturesFilter.checked = 'Electric side mirrors'">Electric side mirrors</nb-checkbox>
+      </div>
+      <div class="checkbox">
+        <nb-checkbox [checked]="carFeaturesFilter.checked == 'Smart key'" (change)="carFeaturesFilter.checked = 'Smart key'">Smart key</nb-checkbox>
+      </div>
+      <div class="checkbox">
+        <nb-checkbox [checked]="carFeaturesFilter.checked == 'Air conditioner'" (change)="carFeaturesFilter.checked = 'Air conditioner'">Air conditioner</nb-checkbox>
+      </div>
+      <div class="checkbox">
+        <nb-checkbox [checked]="carFeaturesFilter.checked == 'Phone holder'" (change)="carFeaturesFilter.checked = 'Phone holder'">Phone holder</nb-checkbox>
+      </div>
+
+      <div (click)="applyFilter('carFeaturesFilter')" class="apply-filter-button">Apply <img alt="icon" src="../../../../../assets/icons/arrow-right.png"></div>
+    </div>
+  </div>
+
+</div>
+

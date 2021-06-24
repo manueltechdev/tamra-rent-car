@@ -1,0 +1,22 @@
+.search-bar-cars-search-container {
+input{background: #FFFFFF 0% 0% no-repeat padding-box;
+  box-shadow: 2px 7px 10px #00000029;
+  border-radius: 71px;
+  opacity: 1;}
+}
+.header-home-menu {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  margin-left: 45%;
+  a {
+    text-align: right;
+    font: normal normal bold 14px/21px Poppins;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+}

@@ -1,0 +1,30 @@
+<nb-card class="filters-select-range-card">
+  <nb-card-header>
+    <h5>Filter by {{ filter.name }}</h5>
+  </nb-card-header>
+  <nb-card-body>
+    <form *ngIf="!!(filter)" [formGroup]="form" class="filters-select-range-card__form">
+      <input formControlName="min"
+             type="number"
+             [status]="form.controls.min.valid ? 'success': 'danger'"
+             nbInput
+             fullWidth
+             shape="semi-round"
+             fieldSize="medium"
+             [placeholder]="'Min value '+ '$ ' + filter.values[0]?.value">
+      -
+      <input formControlName="max"
+             type="number"
+             [status]="form.controls.max.valid ? 'success': 'danger'"
+             nbInput
+             shape="semi-round"
+             fullWidth
+             fieldSize="medium"
+             [placeholder]="'Max value '+ '$ ' + filter.values[1]?.value">
+
+    </form>
+  </nb-card-body>
+  <button [disabled]="form.invalid" (click)="closeAndSend()" nbButton class="filters-select-range-card__btn">
+    Apply filter
+  </button>
+</nb-card>
